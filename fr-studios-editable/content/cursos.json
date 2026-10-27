@@ -1,0 +1,78 @@
+{
+  "titulo": "Taller de fotografía de producto",
+  "subtitulo": "One to one · 2026",
+  "descripcion": "Una sesión de cinco horas, solo para ti, en el estudio. Sales sabiendo armar tu set, iluminar con una sola luz y entregar fotos listas para vender.",
+  "precio": 4500,
+  "nota_precio": "MXN más IVA",
+  "iva": 16,
+  "anticipo": 50,
+  "duracion": "5 horas",
+  "modalidad": "1 a 1 en estudio",
+  "equipo": "Incluido sin costo",
+  "imparte": "Francisco PL",
+  "temario": [
+    {
+      "titulo": "Introducción",
+      "descripcion": "Qué hace que una foto de producto venda y cómo vamos a trabajar.",
+      "practica": ""
+    },
+    {
+      "titulo": "Cámara y exposición",
+      "descripcion": "ISO, apertura y velocidad. Balance de blancos y formato RAW.",
+      "practica": "Un mismo objeto ajustando la exposición en manual."
+    },
+    {
+      "titulo": "Montaje del set",
+      "descripcion": "Fondo blanco o infinito con lo que tengas a la mano. Trípode o apoyo estable.",
+      "practica": ""
+    },
+    {
+      "titulo": "Composición",
+      "descripcion": "Una toma limpia y bien encuadrada: encuadre y espacio negativo.",
+      "practica": "Armar tu set y encuadrar un producto en 20 minutos."
+    },
+    {
+      "titulo": "Iluminación artificial",
+      "descripcion": "Una sola fuente de luz. Luz dura contra luz suave, difusor casero y cómo evitar reflejos.",
+      "practica": "Iluminar tu producto con una sola luz."
+    },
+    {
+      "titulo": "Toma final de producto",
+      "descripcion": "Fondo blanco para catálogo: recorte limpio, textura, nitidez y color exacto.",
+      "practica": ""
+    },
+    {
+      "titulo": "Edición en Lightroom",
+      "descripcion": "Recorte, color y presets. Exportación para redes o tienda en línea.",
+      "practica": ""
+    },
+    {
+      "titulo": "Cierre",
+      "descripcion": "Revisamos juntos tus fotos y lo que puedes mejorar.",
+      "practica": ""
+    }
+  ],
+  "fechas": [
+    {
+      "fecha": "2026-11-07",
+      "estado": "Lleno"
+    },
+    {
+      "fecha": "2026-11-14",
+      "estado": "1 lugar"
+    },
+    {
+      "fecha": "2026-11-21",
+      "estado": "Libre"
+    },
+    {
+      "fecha": "2026-11-28",
+      "estado": "Libre"
+    }
+  ],
+  "aviso_fechas": "Fechas de ejemplo",
+  "nota_anticipo": "Se requiere anticipo para apartar fecha.",
+  "presentacion": "https://www.canva.com/d/94mzkusvPKb_5zX",
+  "regalo_titulo": "Regala el taller",
+  "regalo_texto": "Para alguien que vende en línea o tiene un negocio de comida. Te mando una tarjeta digital y la persona elige su fecha. Vigencia de 6 meses."
+}

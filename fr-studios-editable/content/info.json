@@ -1,0 +1,57 @@
+{
+  "retrato": "",
+  "nombre": "Francisco PL",
+  "bio": "Soy fotógrafo de producto y fundador de FR Studios en Guamúchil. Trabajo con restaurantes, neverías y marcas locales que necesitan que lo que venden se vea tan bien en una pantalla como en persona.\n\nMi método es sencillo: una buena luz, un set limpio y el color real del producto. Es lo mismo que enseño en mi taller, uno a uno.",
+  "proceso": [
+    {
+      "titulo": "Cotización",
+      "tiempo": "Mismo día",
+      "texto": "Me cuentas qué producto es y dónde usarás las fotos. Te respondo con precio y fechas."
+    },
+    {
+      "titulo": "Sesión",
+      "tiempo": "Fecha acordada",
+      "texto": "En el estudio o en tu local. Armo el set y la luz según tu producto."
+    },
+    {
+      "titulo": "Edición",
+      "tiempo": "3 a 5 días",
+      "texto": "Selección, recorte, limpieza y corrección de color."
+    },
+    {
+      "titulo": "Entrega",
+      "tiempo": "Liga de descarga",
+      "texto": "Tus fotos en tamaño para web e impresión."
+    }
+  ],
+  "clientes": [
+    "Sushi Yokoi",
+    "Bar Kai",
+    "Keiba Sushi",
+    "Nevería El Profe",
+    "La Duquesa"
+  ],
+  "testimonios": [],
+  "faq": [
+    {
+      "pregunta": "¿Vas a mi negocio o voy al estudio?",
+      "respuesta": "Las dos. Fondo blanco y catálogo se hacen en el estudio. Gastronomía y lifestyle, en tu local para mostrar el ambiente real."
+    },
+    {
+      "pregunta": "¿Cuántas fotos entregas?",
+      "respuesta": "Depende del paquete. En fondo blanco son 3 ángulos por pieza. En gastronomía, una selección editada de cada platillo."
+    },
+    {
+      "pregunta": "¿En qué formato recibo las fotos?",
+      "respuesta": "JPG en alta resolución para impresión y una versión ligera para web y redes, con una liga de descarga."
+    },
+    {
+      "pregunta": "¿Cómo aparto mi fecha?",
+      "respuesta": "Con un anticipo. La fecha queda reservada en cuanto se recibe."
+    },
+    {
+      "pregunta": "¿Necesito cámara para el taller?",
+      "respuesta": "No. Te presto cámara, computadora o tablet sin costo. Si tienes cámara propia, tráela."
+    }
+  ]
+}

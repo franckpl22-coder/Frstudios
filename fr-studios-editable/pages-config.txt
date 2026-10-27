@@ -1,0 +1,300 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: portafolio
+    label: Portafolio
+    type: file
+    path: content/portafolio.json
+    format: json
+    fields:
+      - name: intro
+        label: Texto de entrada
+        type: string
+      - name: ciudad
+        label: Ciudad (debajo del texto de entrada)
+        type: string
+      - name: fotos
+        label: Fotos
+        description: Arrastra para cambiar el orden. Las fotos sin imagen se ven como marcos grises.
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{titulo} · {categoria}"
+        fields:
+          - name: foto
+            label: Foto
+            type: image
+          - name: titulo
+            label: Título
+            type: string
+          - name: categoria
+            label: Categoría
+            type: select
+            options:
+              values: [Producto, Gastronomía, Lifestyle, Catálogo]
+
+  - name: cursos
+    label: Cursos
+    type: file
+    path: content/cursos.json
+    format: json
+    fields:
+      - name: titulo
+        label: Nombre del taller
+        type: string
+      - name: subtitulo
+        label: Subtítulo
+        type: string
+      - name: descripcion
+        label: Descripción
+        type: text
+      - name: precio
+        label: Precio (MXN, sin IVA)
+        type: number
+      - name: nota_precio
+        label: Texto junto al precio
+        type: string
+      - name: iva
+        label: IVA % (pon 0 si no cobras IVA)
+        type: number
+      - name: anticipo
+        label: Anticipo % para apartar
+        type: number
+      - name: duracion
+        label: Duración
+        type: string
+      - name: modalidad
+        label: Modalidad
+        type: string
+      - name: equipo
+        label: Equipo
+        type: string
+      - name: imparte
+        label: Imparte
+        type: string
+      - name: temario
+        label: Temario
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{titulo}"
+        fields:
+          - name: titulo
+            label: Tema
+            type: string
+          - name: descripcion
+            label: Descripción
+            type: text
+          - name: practica
+            label: Práctica (opcional)
+            type: string
+      - name: fechas
+        label: Fechas del taller
+        description: Las fechas que ya pasaron se ocultan solas.
+        type: object
+        list: true
+        fields:
+          - name: fecha
+            label: Fecha
+            type: date
+            options:
+              format: yyyy-MM-dd
+          - name: estado
+            label: Lugares
+            type: select
+            options:
+              values: [Libre, 1 lugar, 2 lugares, Lleno]
+      - name: aviso_fechas
+        label: Aviso junto a las fechas (borra el texto para quitarlo)
+        type: string
+      - name: nota_anticipo
+        label: Nota debajo del botón
+        type: string
+      - name: presentacion
+        label: Enlace a la presentación de Canva (vacío para ocultar el botón)
+        type: string
+      - name: regalo_titulo
+        label: Título de la tarjeta de regalo (vacío para ocultar)
+        type: string
+      - name: regalo_texto
+        label: Texto de la tarjeta de regalo
+        type: text
+
+  - name: precios
+    label: Precios
+    type: file
+    path: content/precios.json
+    format: json
+    fields:
+      - name: nota
+        label: Texto junto a "Paquetes"
+        type: string
+      - name: aviso
+        label: Aviso de precios (borra el texto para quitarlo)
+        type: string
+      - name: paquetes
+        label: Paquetes
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{nombre}"
+        fields:
+          - name: nombre
+            label: Nombre
+            type: string
+          - name: precio
+            label: Precio desde (MXN)
+            type: number
+          - name: unidad
+            label: Unidad (por pieza, por sesión…)
+            type: string
+          - name: incluye
+            label: Qué incluye
+            type: string
+            list: true
+      - name: servicios
+        label: Cotizador · servicios
+        description: "Total = precio base + (cantidad cobrada − incluye hasta) × precio por extra. La cantidad cobrada nunca es menor al mínimo."
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{nombre}"
+        fields:
+          - name: nombre
+            label: Nombre en el ticket
+            type: string
+          - name: boton
+            label: Texto del botón
+            type: string
+          - name: precio_base
+            label: Precio base (MXN)
+            type: number
+          - name: incluye_hasta
+            label: Piezas incluidas en el precio base
+            type: number
+          - name: precio_extra
+            label: Precio por pieza extra (MXN)
+            type: number
+          - name: minimo
+            label: Mínimo de piezas que se cobran
+            type: number
+          - name: unidad
+            label: Unidad (piezas, platillos…)
+            type: string
+      - name: traslado
+        label: Cotizador · costo de traslado a su negocio (MXN)
+        type: number
+      - name: usos
+        label: Cotizador · opciones de uso
+        type: string
+        list: true
+      - name: condiciones
+        label: Condiciones
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Título
+            type: string
+          - name: texto
+            label: Texto
+            type: text
+      - name: aviso_condiciones
+        label: Aviso de condiciones (borra el texto para quitarlo)
+        type: string
+
+  - name: info
+    label: Información (+Info)
+    type: file
+    path: content/info.json
+    format: json
+    fields:
+      - name: retrato
+        label: Tu retrato
+        type: image
+      - name: nombre
+        label: Nombre
+        type: string
+      - name: bio
+        label: Sobre mí (deja una línea en blanco entre párrafos)
+        type: text
+      - name: proceso
+        label: Cómo trabajo
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Paso
+            type: string
+          - name: tiempo
+            label: Tiempo
+            type: string
+          - name: texto
+            label: Descripción
+            type: text
+      - name: clientes
+        label: Clientes
+        type: string
+        list: true
+      - name: testimonios
+        label: Testimonios
+        type: object
+        list: true
+        fields:
+          - name: frase
+            label: Frase
+            type: text
+          - name: autor
+            label: Nombre y negocio
+            type: string
+      - name: faq
+        label: Preguntas frecuentes
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{pregunta}"
+        fields:
+          - name: pregunta
+            label: Pregunta
+            type: string
+          - name: respuesta
+            label: Respuesta
+            type: text
+
+  - name: contacto
+    label: Contacto
+    type: file
+    path: content/contacto.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+      - name: whatsapp
+        label: WhatsApp para los enlaces (52 + número, sin espacios)
+        type: string
+      - name: whatsapp_visible
+        label: WhatsApp como se muestra
+        type: string
+      - name: mensaje_whatsapp
+        label: Mensaje que se escribe solo al abrir WhatsApp
+        type: string
+      - name: correo
+        label: Correo
+        type: string
+      - name: instagram
+        label: Usuario de Instagram (sin @)
+        type: string
+      - name: ciudad
+        label: Ciudad
+        type: string

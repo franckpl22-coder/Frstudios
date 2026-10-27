@@ -1,0 +1,33 @@
+FR STUDIOS - COMO PUBLICAR Y EDITAR TU PAGINA
+
+1. GITHUB (donde se guarda tu pagina)
+   - Crea una cuenta gratis en github.com
+   - Boton "+" arriba a la derecha > New repository
+   - Nombre: fr-studios. Marca "Private" si quieres. Create repository.
+   - Toca "uploading an existing file" y arrastra TODO lo de esta carpeta
+     (index.html, admin, content, media, _headers, GUIA.txt, pages-config.txt).
+   - Commit changes.
+   - Revisa que exista el archivo .pages.yml. Si no aparece (en Mac los
+     archivos que empiezan con punto se esconden):
+     Add file > Create new file > nombre: .pages.yml
+     y pega todo el contenido de pages-config.txt. Commit changes.
+
+2. CLOUDFLARE (donde se ve tu pagina)
+   - dash.cloudflare.com > Workers & Pages > Create > Pages
+   - Connect to Git > conecta tu cuenta de GitHub > elige fr-studios
+   - Framework preset: None. Build command: vacio. Build output directory: /
+   - Save and Deploy. Tu pagina queda en fr-studios.pages.dev
+   - (Si ya habias creado un proyecto "fr-studios" subiendo el zip,
+     borralo antes o usa otro nombre.)
+
+3. PAGES CMS (donde editas)
+   - Entra a app.pagescms.org > Sign in with GitHub
+   - Autoriza e instala la app en tu repositorio fr-studios
+   - Abre fr-studios: a la izquierda veras Portafolio, Cursos, Precios,
+     Informacion (+Info) y Contacto.
+   - Cambia lo que quieras y toca Save. En 1 o 2 minutos se ve en tu pagina.
+   - Atajo: tudominio.com/admin te lleva al editor.
+
+FOTOS
+   - Sube fotos JPG de maximo 2000 px de ancho y menos de 1 MB cada una
+     para que la pagina cargue rapido.

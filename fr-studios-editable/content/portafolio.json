@@ -1,0 +1,96 @@
+{
+  "intro": "Fotografía de producto, gastronomía y lifestyle.",
+  "ciudad": "Guamúchil, Sinaloa.",
+  "fotos": [
+    {
+      "foto": "",
+      "titulo": "Fondo blanco",
+      "categoria": "Producto"
+    },
+    {
+      "foto": "",
+      "titulo": "Rollo de la casa",
+      "categoria": "Gastronomía"
+    },
+    {
+      "foto": "",
+      "titulo": "En la barra",
+      "categoria": "Lifestyle"
+    },
+    {
+      "foto": "",
+      "titulo": "Vista frontal",
+      "categoria": "Catálogo"
+    },
+    {
+      "foto": "",
+      "titulo": "Coctel",
+      "categoria": "Gastronomía"
+    },
+    {
+      "foto": "",
+      "titulo": "Textura",
+      "categoria": "Producto"
+    },
+    {
+      "foto": "",
+      "titulo": "Manos",
+      "categoria": "Lifestyle"
+    },
+    {
+      "foto": "",
+      "titulo": "Silueteado",
+      "categoria": "Producto"
+    },
+    {
+      "foto": "",
+      "titulo": "Postre",
+      "categoria": "Gastronomía"
+    },
+    {
+      "foto": "",
+      "titulo": "Variantes",
+      "categoria": "Catálogo"
+    },
+    {
+      "foto": "",
+      "titulo": "Reflejos",
+      "categoria": "Producto"
+    },
+    {
+      "foto": "",
+      "titulo": "Ambiente",
+      "categoria": "Lifestyle"
+    },
+    {
+      "foto": "",
+      "titulo": "Ingredientes",
+      "categoria": "Gastronomía"
+    },
+    {
+      "foto": "",
+      "titulo": "Perfil",
+      "categoria": "Catálogo"
+    },
+    {
+      "foto": "",
+      "titulo": "Empaque",
+      "categoria": "Producto"
+    },
+    {
+      "foto": "",
+      "titulo": "Mesa servida",
+      "categoria": "Gastronomía"
+    },
+    {
+      "foto": "",
+      "titulo": "Equipo",
+      "categoria": "Lifestyle"
+    },
+    {
+      "foto": "",
+      "titulo": "Escala",
+      "categoria": "Catálogo"
+    }
+  ]
+}

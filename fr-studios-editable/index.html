@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FR Studios · Fotografía de producto</title>
+<meta name="description" content="FR Studios, estudio de fotografía de producto de Francisco PL en Guamúchil, Sinaloa. Fotografía de fondo blanco para e-commerce, gastronomía, lifestyle y catálogo. Taller personalizado de fotografía de producto.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FR Studios · Fotografía de producto en Guamúchil">
+<meta property="og:description" content="Fotografía de producto, gastronomía y lifestyle. Cotiza por WhatsApp o aparta tu lugar en el taller.">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+
+/* Layout: galería primero, como una hoja de contactos; todo en letra de máquina de escribir, mucho blanco, líneas finas */
+:root{
+  --bg:#FAFAF8; --fg:#161616; --muted:#77746E; --line:#E3E1DC; --soft:#F0EEEA;
+  --paper:#FFFFFF; --paper-ink:#1C1C1E; --wa:#1F8F55;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121212; --fg:#ECEAE5; --muted:#9A978F; --line:#2A2A28; --soft:#1B1B1A; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121212; --fg:#ECEAE5; --muted:#9A978F; --line:#2A2A28; --soft:#1B1B1A; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg); color:var(--fg); font-family:var(--mono); font-size:14.5px; line-height:1.75; font-weight:400; -webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--fg); outline-offset:3px}
+.wrap{max-width:1320px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+.narrow{max-width:62ch}
+.up{text-transform:uppercase; letter-spacing:.14em; font-size:.74rem}
+.muted{color:var(--muted)}
+h1,h2,h3{font-weight:500; margin:0; text-wrap:balance}
+h2{font-size:clamp(1.15rem,2vw,1.45rem); text-transform:uppercase; letter-spacing:.1em; line-height:1.3}
+h3{font-size:.95rem; text-transform:uppercase; letter-spacing:.08em}
+p{margin:0}
+.ex{display:inline-block; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border:1px dashed var(--muted); padding:1px 7px; vertical-align:middle}
+
+/* Header */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
+header.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--bg)}
+header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:26px 22px}
+.logo{text-decoration:none; font-weight:500; font-size:1rem; letter-spacing:.32em; white-space:nowrap}
+.menu ul{list-style:none; margin:0; padding:0; display:flex; gap:30px}
+.menu a{text-decoration:none; color:var(--muted); font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; padding-block:4px; border-bottom:1px solid transparent; white-space:nowrap}
+.menu a:hover{color:var(--fg)}
+.menu a[aria-current="page"]{color:var(--fg); border-bottom-color:var(--fg)}
+@media (max-width:760px){
+  header.top .wrap{flex-direction:column; align-items:flex-start; gap:12px; padding-block:18px 12px}
+  .menu{width:100%; overflow-x:auto; scrollbar-width:none}
+  .menu::-webkit-scrollbar{display:none}
+  .menu ul{gap:22px; width:max-content}
+}
+
+/* Vistas */
+.view{padding-block:24px 120px}
+@media (prefers-reduced-motion:no-preference){ .view.enter{animation:fade .35s ease both} }
+@keyframes fade{from{opacity:.001} to{opacity:1}}
+.block{padding-top:96px}
+.block:first-child{padding-top:24px}
+.head{display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap; padding-bottom:18px; border-bottom:1px solid var(--line); margin-bottom:36px}
+.head p{color:var(--muted); max-width:52ch}
+
+/* Portafolio */
+.intro{display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap; margin-bottom:28px}
+.intro p{max-width:56ch}
+.filters{display:flex; gap:22px; flex-wrap:wrap}
+.filters button{background:none; border:0; padding:2px 0; font-family:var(--mono); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); cursor:pointer; border-bottom:1px solid transparent}
+.filters button[aria-pressed="true"]{color:var(--fg); border-bottom-color:var(--fg)}
+.grid{columns:3 300px; column-gap:14px}
+.ph{display:block; width:100%; break-inside:avoid; margin:0 0 14px; padding:0; border:0; background:none; text-align:left; cursor:zoom-in; font-family:var(--mono); color:var(--fg)}
+.ph .img{display:block; width:100%; max-width:100%; position:relative; overflow:hidden}
+.ph .img::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 32% 16%, rgba(255,255,255,.55), rgba(255,255,255,0) 58%)}
+.ph .img::after{content:""; position:absolute; left:50%; bottom:20%; width:34%; height:7%; transform:translateX(-50%); background:radial-gradient(ellipse, rgba(20,20,20,.28), transparent 70%); filter:blur(6px)}
+.ph img{display:block; width:100%; height:auto}
+.ph .cap{display:flex; justify-content:space-between; gap:12px; padding-top:8px; font-size:.7rem; letter-spacing:.06em; color:var(--muted)}
+.ph .cap i{font-style:normal}
+@media (hover:hover){ .ph .cap{opacity:0; transition:opacity .2s} .ph:hover .cap,.ph:focus-visible .cap{opacity:1} }
+@media (prefers-reduced-motion:no-preference){ .ph .img{transition:opacity .25s} .ph:hover .img{opacity:.88} }
+.note{margin-top:8px; font-size:.7rem; color:var(--muted)}
+
+/* Botones */
+.btn{display:inline-flex; align-items:center; gap:10px; padding:11px 18px; border:1px solid var(--fg); background:transparent; color:var(--fg); font-family:var(--mono); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; cursor:pointer}
+.btn.solid{background:var(--fg); color:var(--bg)}
+.btn:hover{opacity:.82}
+.link{background:none; border:0; padding:0; font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:inherit; text-decoration:underline; text-underline-offset:4px; cursor:pointer}
+.actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+
+/* Cursos */
+.course{display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:72px; align-items:start}
+.course .lead{font-size:1.02rem; max-width:56ch}
+.temario{list-style:none; margin:36px 0 0; padding:0; border-top:1px solid var(--line)}
+.temario li{display:grid; grid-template-columns:44px minmax(0,1fr); gap:14px; padding:18px 0; border-bottom:1px solid var(--line)}
+.temario .n{color:var(--muted); font-size:.74rem; padding-top:2px}
+.temario b{font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem; display:block; margin-bottom:4px}
+.temario p{color:var(--muted)}
+.temario .prac{display:block; margin-top:6px; font-style:italic; color:var(--fg)}
+.card{position:sticky; top:calc(env(safe-area-inset-top,0px) + 96px); display:flex; flex-direction:column; gap:20px; padding-top:4px}
+.price{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.price b{font-weight:400; font-size:2.1rem; line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.price span{color:var(--muted); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase}
+.kv{display:grid; grid-template-columns:auto 1fr; gap:6px 18px; margin:0; padding:14px 0; border-block:1px solid var(--line)}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.dates{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px}
+.date{border:1px solid var(--line); background:transparent; color:var(--fg); padding:10px 4px; display:flex; flex-direction:column; align-items:center; gap:2px; cursor:pointer; font-family:var(--mono)}
+.date b{font-weight:400; font-size:1.25rem; line-height:1}
+.date span{font-size:.6rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.date[aria-pressed="true"]{border-color:var(--fg)}
+.date:disabled{opacity:.4; cursor:not-allowed; text-decoration:line-through}
+.gift{margin-top:96px; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px 48px; align-items:center; padding:28px 0; border-block:1px solid var(--line)}
+.gift p{color:var(--muted); max-width:58ch; margin-top:6px}
+
+/* Ticket (papel térmico, igual en ambos temas) */
+.paper{position:relative; background:var(--paper); color:var(--paper-ink); padding:18px 16px 14px; margin-bottom:10px; box-shadow:0 14px 26px -20px rgba(0,0,0,.55); max-width:100%; border:1px solid rgba(0,0,0,.06)}
+.paper::after{content:""; position:absolute; left:0; right:0; bottom:-10px; height:10px;
+  background:linear-gradient(-45deg, transparent 7px, var(--paper) 0), linear-gradient(45deg, transparent 7px, var(--paper) 0);
+  background-size:14px 14px; background-position:left bottom; background-repeat:repeat-x}
+.receipt{margin:0; font-family:var(--mono); font-size:.74rem; line-height:1.55; white-space:pre; overflow-x:auto; color:var(--paper-ink); font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:no-preference){ .paper.print{animation:print .45s ease-out} }
+@keyframes print{from{clip-path:inset(0 0 100% 0)} to{clip-path:inset(0 0 0 0)}}
+
+/* Precios */
+.plans{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:48px}
+.plan{display:flex; flex-direction:column; gap:14px; padding-top:18px; border-top:1px solid var(--fg); min-width:0}
+.plan .price b{font-size:1.7rem}
+.plan ul{list-style:none; margin:0; padding:0; color:var(--muted); flex:1}
+.plan li{padding:3px 0}
+.quote{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:72px; align-items:start}
+.qf{display:flex; flex-direction:column; gap:30px; min-width:0}
+.q{border:0; margin:0; padding:0; min-width:0}
+.q legend,.q .ql{display:block; padding:0; margin-bottom:12px; text-transform:uppercase; letter-spacing:.1em; font-size:.78rem; font-weight:500}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chips input{position:absolute; opacity:0; pointer-events:none}
+.chips label{font-size:.78rem; padding:7px 12px; border:1px solid var(--line); cursor:pointer}
+.chips input:checked + label{border-color:var(--fg); background:var(--fg); color:var(--bg)}
+.chips input:focus-visible + label{outline:1px solid var(--fg); outline-offset:2px}
+.qty{display:flex; align-items:center; gap:16px}
+.qty input{flex:1; min-width:0; accent-color:var(--fg)}
+.qty output{font-size:1.4rem; min-width:3ch; text-align:right; font-variant-numeric:tabular-nums}
+.qr{display:flex; flex-direction:column; gap:14px; min-width:0}
+.terms{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:36px}
+.terms div{display:flex; flex-direction:column; gap:8px; min-width:0}
+.terms p{color:var(--muted); font-size:.88rem}
+
+/* +Info */
+.about{display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); gap:64px; align-items:start}
+.portrait{aspect-ratio:4/5; max-width:100%; background:var(--soft); display:flex; align-items:flex-end; padding:12px; font-size:.7rem; color:var(--muted)}
+.about .txt{display:flex; flex-direction:column; gap:16px; max-width:58ch}
+.steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:36px}
+.steps div{display:flex; flex-direction:column; gap:8px; min-width:0}
+.steps .n{color:var(--muted); font-size:.72rem}
+.steps p{color:var(--muted); font-size:.88rem}
+.clients{display:flex; flex-wrap:wrap; gap:8px 36px; font-size:1.05rem; text-transform:uppercase; letter-spacing:.1em}
+.quotes{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:48px}
+.quotes figure{margin:0; display:flex; flex-direction:column; gap:12px}
+.quotes blockquote{margin:0; font-style:italic; font-size:1rem; color:var(--muted)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none; cursor:pointer; padding:18px 0; display:flex; justify-content:space-between; gap:16px; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; color:var(--muted)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding-bottom:20px; color:var(--muted); max-width:64ch}
+
+/* Contacto */
+.contact{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:72px; align-items:start}
+.contact .big{font-size:clamp(1.3rem,2.6vw,1.9rem); line-height:1.35; font-weight:400; text-transform:none; letter-spacing:-.01em; max-width:20ch}
+.rows{margin:0; border-top:1px solid var(--line)}
+.row{display:grid; grid-template-columns:110px minmax(0,1fr) auto; gap:16px; align-items:center; padding:16px 0; border-bottom:1px solid var(--line)}
+.row dt{color:var(--muted); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase}
+.row dd{margin:0; font-size:1rem; overflow-wrap:anywhere}
+.row a{text-decoration:none}
+.row a:hover{text-decoration:underline; text-underline-offset:4px}
+
+/* Footer */
+footer{border-top:1px solid var(--line); padding-block:26px 90px; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+footer a{text-decoration:none} footer a:hover{color:var(--fg)}
+footer nav{display:flex; gap:20px; flex-wrap:wrap}
+
+/* WhatsApp */
+.wa{position:fixed; right:calc(18px + env(safe-area-inset-right,0px)); bottom:calc(18px + env(safe-area-inset-bottom,0px)); z-index:6; width:50px; height:50px; display:grid; place-items:center; border-radius:50%; background:var(--wa); color:#FFFFFF; box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.wa svg{width:22px; height:22px}
+
+/* Lightbox */
+.lb{position:fixed; inset:0; z-index:20; background:var(--bg); color:var(--fg); display:grid; grid-template-rows:auto minmax(0,1fr) auto; padding:calc(18px + env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px)); touch-action:pan-y}
+.lb-top,.lb-bot{display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.lb-stage{display:grid; place-items:center; min-height:0; padding-block:18px}
+.lb-img{position:relative; max-width:100%; max-height:100%; height:100%; overflow:hidden}
+.lb-img::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 32% 16%, rgba(255,255,255,.55), rgba(255,255,255,0) 58%)}
+.lb-img::after{content:""; position:absolute; left:50%; bottom:20%; width:34%; height:7%; transform:translateX(-50%); background:radial-gradient(ellipse, rgba(20,20,20,.28), transparent 70%); filter:blur(10px)}
+.lb-img img{width:100%; height:100%; object-fit:contain; display:block}
+.lb button{font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; background:transparent; color:var(--fg); border:0; padding:6px 0; cursor:pointer}
+.lb-nav{display:flex; gap:22px}
+
+/* Modal imagen JPG */
+.im{position:fixed; inset:0; z-index:25; background:rgba(12,12,12,.82); display:grid; place-items:center; padding:calc(16px + env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px)); overflow:auto}
+.im-box{background:var(--bg); color:var(--fg); width:min(100%,440px); padding:18px; display:flex; flex-direction:column; gap:12px}
+.im-top{display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.im img{width:100%; height:auto; max-height:62vh; object-fit:contain; background:#E9E9E6; -webkit-touch-callout:default}
+.im .hint{color:var(--muted); font-size:.85rem}
+.im .msg{min-height:1.2em; font-size:.75rem; color:var(--muted)}
+
+@media (max-width:980px){
+  .course,.quote,.about,.contact{grid-template-columns:minmax(0,1fr); gap:48px}
+  .card{position:static}
+  .plans{grid-template-columns:minmax(0,1fr); gap:36px}
+  .terms,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .portrait{max-width:380px}
+}
+@media (max-width:560px){
+  body{font-size:14px}
+  .terms,.steps,.quotes{grid-template-columns:minmax(0,1fr)}
+  .gift{grid-template-columns:minmax(0,1fr)}
+  .row{grid-template-columns:minmax(0,1fr) auto}
+  .row dt{grid-column:1 / -1}
+  .grid{column-gap:10px} .ph{margin-bottom:10px}
+  .block{padding-top:72px}
+}
+
+/* Contenido editable */
+.loading{padding-block:64px; color:var(--muted); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase}
+.ph .img.real::before,.ph .img.real::after,.lb-img.real::before,.lb-img.real::after{content:none}
+.lb-img.real{width:100%; height:100%}
+.portrait.has{padding:0; overflow:hidden}
+.portrait img{width:100%; height:100%; object-fit:cover; display:block}
+.bio p + p{margin-top:16px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#portafolio">FR STUDIOS</a>
+    <nav class="menu" aria-label="Secciones"><ul>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#info">+Info</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<p class="wrap loading" id="loading">Cargando…</p>
+
+<!-- PORTAFOLIO -->
+<div class="view" id="portafolio">
+  <div class="wrap">
+    <div class="intro">
+      <p><span id="pfIntro"></span><br><span class="muted" id="pfCity"></span></p>
+      <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</div>
+
+<!-- CURSOS -->
+<div class="view" id="cursos" hidden>
+  <div class="wrap">
+    <section class="block" id="taller">
+      <div class="head"><h2 id="cTitle"></h2><span class="up muted" id="cSub"></span></div>
+      <div class="course">
+        <div>
+          <p class="lead" id="cDesc"></p>
+          <ol class="temario" id="cTemario"></ol>
+        </div>
+        <aside class="card" aria-label="Reserva del taller">
+          <div class="price"><b id="cPrice"></b><span id="cPriceNote"></span></div>
+          <dl class="kv">
+            <dt>Duración</dt><dd id="cDur"></dd>
+            <dt>Modalidad</dt><dd id="cMod"></dd>
+            <dt>Equipo</dt><dd id="cEq"></dd>
+            <dt>Imparte</dt><dd id="cBy"></dd>
+          </dl>
+          <div>
+            <div class="up muted" style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-bottom:8px"><span id="cMonth"></span><span class="ex" id="cDatesNote" hidden></span></div>
+            <div class="dates" id="dates"></div>
+          </div>
+          <div id="tkWrap" hidden>
+            <div class="paper" id="tkPaper"><pre class="receipt" id="tkTicket"></pre></div>
+            <button type="button" class="link" data-ticket="tkTicket" data-name="reserva-taller-fr-studios">Ver ticket como imagen JPG</button>
+          </div>
+          <div class="actions">
+            <a class="btn solid" id="bookBtn" href="#" target="_blank" rel="noopener">Apartar fecha</a>
+            <a class="btn" id="cDeck" href="#" target="_blank" rel="noopener">Presentación</a>
+          </div>
+          <p class="muted" style="font-size:.78rem" id="cDeposit"></p>
+        </aside>
+      </div>
+      <div class="gift" id="gift">
+        <div><h3 id="gTitle"></h3><p id="gText"></p></div>
+        <a class="btn" target="_blank" rel="noopener" id="giftBtn" href="#">Quiero regalarlo</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- PRECIOS -->
+<div class="view" id="precios" hidden>
+  <div class="wrap">
+    <section class="block" id="paquetes">
+      <div class="head"><h2>Paquetes</h2><p><span id="prNote"></span> <span class="ex" id="prAviso" hidden></span></p></div>
+      <div class="plans" id="plans"></div>
+    </section>
+
+    <section class="block" id="cotizador">
+      <div class="head"><h2>Cotizador</h2><p>Tres preguntas. El ticket te llega por WhatsApp y te confirmo el precio exacto el mismo día.</p></div>
+      <div class="quote">
+        <form class="qf" id="qt" onsubmit="return false">
+          <fieldset class="q"><legend>01 · Qué vas a fotografiar</legend><div class="chips" id="qtTipos"></div></fieldset>
+          <div class="q"><label class="ql" for="qtN">02 · Cuántas piezas o platillos</label>
+            <div class="qty"><input type="range" id="qtN" min="1" max="100" value="12"><output id="qtNo" for="qtN">12</output></div>
+          </div>
+          <fieldset class="q"><legend>03 · Dónde las vas a usar</legend><div class="chips" id="qtUsos"></div></fieldset>
+          <fieldset class="q"><legend>04 · Lugar de la sesión</legend>
+            <div class="chips">
+              <input type="radio" name="lugar" id="l-es" value="estudio" checked><label for="l-es">En el estudio</label>
+              <input type="radio" name="lugar" id="l-lo" value="local"><label for="l-lo">En mi negocio</label>
+            </div>
+          </fieldset>
+        </form>
+        <div class="qr" aria-live="polite">
+          <div class="paper" id="qtPaper"><pre class="receipt" id="qtTicket"></pre></div>
+          <div class="actions">
+            <a class="btn solid" id="qtBtn" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            <button type="button" class="link" data-ticket="qtTicket" data-name="cotizacion-fr-studios">Ver como imagen JPG</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="condiciones">
+      <div class="head"><h2>Condiciones</h2><p><span class="ex" id="condAviso" hidden></span></p></div>
+      <div class="terms" id="terms"></div>
+    </section>
+  </div>
+</div>
+
+<!-- +INFO -->
+<div class="view" id="info" hidden>
+  <div class="wrap">
+    <section class="block" id="sobre-mi">
+      <div class="about">
+        <div class="portrait" id="portrait">Tu retrato aquí · 4:5</div>
+        <div class="txt"><h2 id="iName"></h2><div class="bio" id="iBio"></div></div>
+      </div>
+    </section>
+    <section class="block" id="proceso">
+      <div class="head"><h2>Cómo trabajo</h2></div>
+      <div class="steps" id="steps"></div>
+    </section>
+    <section class="block" id="clientes">
+      <div class="head"><h2>Clientes</h2></div>
+      <div class="clients" id="clients"></div>
+      <div class="quotes" id="quotes" style="margin-top:56px"></div>
+    </section>
+    <section class="block" id="faq">
+      <div class="head"><h2>Preguntas frecuentes</h2></div>
+      <div class="faq" id="faqList"></div>
+    </section>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="view" id="contacto" hidden>
+  <div class="wrap">
+    <section class="block">
+      <div class="contact">
+        <div style="display:flex; flex-direction:column; gap:24px">
+          <h2 class="big" id="ctTitle"></h2>
+          <p class="muted narrow" id="ctText"></p>
+          <div class="actions"><a class="btn solid" id="waBtn" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a><a class="btn" href="#cotizador">Cotizador</a></div>
+        </div>
+        <dl class="rows">
+          <div class="row"><dt>WhatsApp</dt><dd id="c-wa"></dd><button class="link" type="button" data-copy="c-wa">Copiar</button></div>
+          <div class="row"><dt>Correo</dt><dd id="c-mail"></dd><button class="link" type="button" data-copy="c-mail">Copiar</button></div>
+          <div class="row"><dt>Instagram</dt><dd id="c-ig"></dd><button class="link" type="button" data-copy="c-ig">Copiar</button></div>
+          <div class="row"><dt>Estudio</dt><dd id="c-city"></dd><span></span></div>
+        </dl>
+      </div>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap"><span id="ftCopy">© FR Studios</span><nav><a id="ftIg" href="#" target="_blank" rel="noopener">Instagram</a><a href="#contacto">Contacto</a><a href="#cursos">Taller</a></nav></div></footer>
+
+<a class="wa" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lb-top"><span id="lbName"></span><button type="button" id="lbClose">Cerrar</button></div>
+  <div class="lb-stage" id="lbStage"><div class="lb-img" id="lbImg"></div></div>
+  <div class="lb-bot"><span id="lbInfo"></span><div class="lb-nav"><button type="button" id="lbPrev">← Anterior</button><button type="button" id="lbNext">Siguiente →</button></div></div>
+</div>
+
+<div class="im" id="im" hidden role="dialog" aria-modal="true" aria-label="Ticket como imagen">
+  <div class="im-box">
+    <div class="im-top"><span>Ticket · JPG</span><button type="button" class="link" id="imClose">Cerrar</button></div>
+    <img id="imImg" alt="Ticket de FR Studios">
+    <p class="hint">Mantén presionada la imagen para guardarla y mándala por WhatsApp.</p>
+    <div class="actions">
+      <button type="button" class="btn solid" id="imShare" hidden>Compartir imagen</button>
+      <button type="button" class="btn" id="imCopy">Copiar imagen</button>
+    </div>
+    <p class="msg" id="imMsg" aria-live="polite"></p>
+  </div>
+</div>
+
+<script>
+// Todo el contenido vive en content/*.json y se edita desde el panel (/admin con Pages CMS).
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const paras=t=>String(t||'').split(/\n\s*\n/).map(s=>s.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
+const fmt=n=>'$'+Math.round(+n||0).toLocaleString('es-MX');
+const p2=n=>String(n).padStart(2,'0');
+const setText=(id,t)=>{ $(id).textContent=t??''; };
+const showEx=(id,t)=>{ const el=$(id); el.textContent=t||''; el.hidden=!t; };
+const DAYS=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'], DAYS_L=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const MONTHS=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const parseDate=s=>{ const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(String(s||'')); return m?new Date(+m[1],+m[2]-1,+m[3]):null; };
+let C={}, waNum='';
+const waLink=t=>'https://wa.me/'+waNum+'?text='+encodeURIComponent(t);
+
+// ---------- Ticket ----------
+const W=32, LINE='-'.repeat(W);
+const row=(a,b)=>{ b=String(b); const room=W-a.length-1; if(b.length>room) b=b.slice(0,Math.max(0,room-1))+'…'; return a+' '.repeat(Math.max(1,W-a.length-b.length))+b; };
+const center=s=>' '.repeat(Math.max(0,Math.floor((W-s.length)/2)))+s;
+const folio=pre=>{ const n=new Date(); return `${pre}${p2(n.getMonth()+1)}${p2(n.getDate())}-${p2(n.getHours())}${p2(n.getMinutes())}`; };
+const today=()=>{ const n=new Date(); return `${p2(n.getDate())}/${p2(n.getMonth()+1)}/${n.getFullYear()}`; };
+function printPaper(el){ el.classList.remove('print'); void el.offsetWidth; el.classList.add('print'); }
+
+// ---------- Portafolio ----------
+const TONES=['#D9D6CF','#CFC9BF','#E2DFD8','#C9C4BA','#D4CEC4','#DEDAD2','#C6C1B8','#D8D2C8'];
+const RATIOS=['4/5','3/2','2/3','1/1','4/5','3/4','3/2','1/1','2/3'];
+const CAT_ORDER=['Producto','Gastronomía','Lifestyle','Catálogo'];
+let photos=[], shown=[], filter='Todo';
+function renderPortafolio(){
+  const P=C.portafolio||{};
+  setText('pfIntro',P.intro); setText('pfCity',P.ciudad);
+  photos=(P.fotos||[]).map((f,i)=>({...f, i, file:(f.foto?String(f.foto).split('/').pop():'FR_'+String(101+i).padStart(4,'0')+'.jpg'), bg:TONES[i%TONES.length], r:RATIOS[i%RATIOS.length]}));
+  const present=[...new Set(photos.map(p=>p.categoria).filter(Boolean))].sort((a,b)=>(CAT_ORDER.indexOf(a)+99)%99-(CAT_ORDER.indexOf(b)+99)%99);
+  const cats=['Todo',...present];
+  if(!cats.includes(filter)) filter='Todo';
+  $('filters').innerHTML=cats.length>2?cats.map(c=>`<button type="button" aria-pressed="${c===filter}" data-c="${esc(c)}">${esc(c)}</button>`).join(''):'';
+  renderGrid();
+}
+function renderGrid(){
+  shown=filter==='Todo'?photos:photos.filter(p=>p.categoria===filter);
+  $('grid').innerHTML=shown.length?shown.map((p,i)=>`<button type="button" class="ph" data-i="${i}" aria-label="Ver ${esc(p.titulo||p.file)} en grande">${p.foto?`<span class="img real"><img src="${esc(p.foto)}" alt="${esc(p.titulo)}" loading="lazy"></span>`:`<span class="img" style="aspect-ratio:${p.r}; background:${p.bg}"></span>`}<span class="cap"><span>${esc(p.titulo||p.file)}</span><i>${esc(p.categoria)}</i></span></button>`).join(''):'<p class="muted">Pronto nuevas fotos.</p>';
+}
+$('filters').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; filter=b.dataset.c; [...$('filters').children].forEach(x=>x.setAttribute('aria-pressed',x===b)); renderGrid(); });
+
+// Lightbox
+const lb=$('lb'), lbImg=$('lbImg');
+let lbI=0, lbLast=null;
+function lbShow(){
+  const p=shown[lbI];
+  if(p.foto){ lbImg.className='lb-img real'; lbImg.style.aspectRatio=''; lbImg.style.background='transparent'; lbImg.innerHTML=`<img src="${esc(p.foto)}" alt="${esc(p.titulo)}">`; }
+  else { lbImg.className='lb-img'; lbImg.style.aspectRatio=p.r; lbImg.style.background=p.bg; lbImg.innerHTML=''; }
+  setText('lbName',p.file);
+  setText('lbInfo',`${p.categoria||''}${p.titulo?' · '+p.titulo:''} · ${lbI+1}/${shown.length}`);
+}
+function lbOpen(i){ lbLast=document.activeElement; lbI=i; lbShow(); lb.hidden=false; document.body.style.overflow='hidden'; $('lbClose').focus(); }
+function lbClose(){ lb.hidden=true; document.body.style.overflow=''; if(lbLast) lbLast.focus(); }
+function lbStep(d){ lbI=(lbI+d+shown.length)%shown.length; lbShow(); }
+$('grid').addEventListener('click',e=>{ const b=e.target.closest('.ph'); if(b) lbOpen(+b.dataset.i); });
+$('lbClose').onclick=lbClose; $('lbPrev').onclick=()=>lbStep(-1); $('lbNext').onclick=()=>lbStep(1);
+$('lbStage').addEventListener('click',e=>{ if(e.target.id==='lbStage') lbClose(); });
+let sx=null;
+lb.addEventListener('pointerdown',e=>{ sx=e.clientX; });
+lb.addEventListener('pointerup',e=>{ if(sx===null) return; const dx=e.clientX-sx; sx=null; if(Math.abs(dx)>50) lbStep(dx<0?1:-1); });
+
+// ---------- Cursos ----------
+function tallerTicket(d){
+  const K=C.cursos||{}, precio=+K.precio||0, iva=precio*(+K.iva||0)/100, total=precio+iva, ant=total*(+K.anticipo||0)/100;
+  const L=[center('FR STUDIOS'),center('Taller de fotografía'),center('de producto'),LINE,center('SOLICITUD DE RESERVA'),LINE,
+    row('Folio',folio('FR-T')),row('Solicitud',today()),LINE,
+    row('Fecha taller', d?`${DAYS[d.getDay()]} ${p2(d.getDate())}/${p2(d.getMonth()+1)}/${d.getFullYear()}`:'Por definir'),
+    row('Duración',K.duracion||''),row('Modalidad',K.modalidad||''),row('Equipo',K.equipo||''),LINE,
+    row('Taller',fmt(precio))];
+  if(+K.iva) L.push(row(`IVA ${+K.iva}%`,fmt(iva)));
+  L.push(LINE,row('TOTAL',fmt(total)+' MXN'));
+  if(+K.anticipo) L.push(row(`ANTICIPO ${+K.anticipo}%`,fmt(ant)+' MXN'));
+  L.push(LINE,' Tu lugar queda apartado al',' enviar el anticipo. Francisco',' te confirma por este medio.');
+  return L.join('\n');
+}
+function setTaller(d){
+  const t=tallerTicket(d);
+  $('bookBtn').href=waLink('Hola Francisco, quiero apartar el taller:\n```\n'+t+'\n```');
+  if(d){
+    $('bookBtn').textContent=`Apartar ${DAYS_L[d.getDay()]} ${d.getDate()} de ${MONTHS[d.getMonth()]}`;
+    setText('tkTicket',t); $('tkWrap').hidden=false; printPaper($('tkPaper'));
+  } else { $('bookBtn').textContent='Apartar fecha'; $('tkWrap').hidden=true; }
+}
+function renderCursos(){
+  const K=C.cursos||{};
+  setText('cTitle',K.titulo); setText('cSub',K.subtitulo); setText('cDesc',K.descripcion);
+  $('cTemario').innerHTML=(K.temario||[]).map((t,i)=>`<li><span class="n">${p2(i+1)}</span><div><b>${esc(t.titulo)}</b><p>${esc(t.descripcion)}</p>${t.practica?`<span class="prac">Práctica: ${esc(t.practica)}</span>`:''}</div></li>`).join('');
+  setText('cPrice',fmt(K.precio)); setText('cPriceNote',K.nota_precio);
+  setText('cDur',K.duracion); setText('cMod',K.modalidad); setText('cEq',K.equipo); setText('cBy',K.imparte);
+  setText('cDeposit',K.nota_anticipo);
+  $('cDeck').hidden=!K.presentacion; if(K.presentacion) $('cDeck').href=K.presentacion;
+  showEx('cDatesNote',K.aviso_fechas);
+  const now=new Date(); now.setHours(0,0,0,0);
+  const fechas=(K.fechas||[]).map(f=>({...f,d:parseDate(f.fecha)})).filter(f=>f.d && f.d>=now).sort((a,b)=>a.d-b.d);
+  const months=[...new Set(fechas.map(f=>MONTHS[f.d.getMonth()]))];
+  setText('cMonth',months.length?months.join(' · '):'Próximas fechas');
+  $('dates').innerHTML=fechas.length?fechas.map((f,i)=>{ const full=/lleno/i.test(f.estado||''); return `<button type="button" class="date" data-i="${i}" ${full?'disabled':'aria-pressed="false"'}><b>${f.d.getDate()}</b><span>${esc(DAYS[f.d.getDay()])} · ${esc(f.estado||'Libre')}</span></button>`; }).join(''):'<p class="muted" style="grid-column:1/-1; font-size:.85rem">Pronto nuevas fechas. Escríbeme para apartar la tuya.</p>';
+  $('dates').onclick=e=>{ const b=e.target.closest('.date:not([disabled])'); if(!b) return; [...$('dates').querySelectorAll('.date:not([disabled])')].forEach(x=>x.setAttribute('aria-pressed',x===b)); setTaller(fechas[+b.dataset.i].d); };
+  setTaller(null);
+  $('gift').hidden=!K.regalo_titulo; setText('gTitle',K.regalo_titulo); setText('gText',K.regalo_texto);
+  $('giftBtn').href=waLink('Hola Francisco, quiero regalar el taller de fotografía de producto.');
+}
+
+// ---------- Precios y cotizador ----------
+function renderPrecios(){
+  const R=C.precios||{};
+  setText('prNote',R.nota); showEx('prAviso',R.aviso); showEx('condAviso',R.aviso_condiciones);
+  $('plans').innerHTML=(R.paquetes||[]).map(p=>`<article class="plan"><h3>${esc(p.nombre)}</h3><div class="price"><b>${fmt(p.precio)}</b><span>${esc(p.unidad)}</span></div><ul>${(p.incluye||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></article>`).join('');
+  $('terms').innerHTML=(R.condiciones||[]).map(c=>`<div><h3>${esc(c.titulo)}</h3><p>${esc(c.texto)}</p></div>`).join('');
+  $('qtTipos').innerHTML=(R.servicios||[]).map((s,i)=>`<input type="radio" name="tipo" id="t-${i}" value="${i}" ${i===0?'checked':''}><label for="t-${i}">${esc(s.boton||s.nombre)}</label>`).join('');
+  $('qtUsos').innerHTML=(R.usos||[]).map((u,i)=>`<input type="radio" name="uso" id="u-${i}" value="${esc(u)}" ${i===0?'checked':''}><label for="u-${i}">${esc(u)}</label>`).join('');
+  $('l-lo').parentElement.hidden=!(+R.traslado>=0);
+  quote();
+}
+function quote(){
+  const R=C.precios||{}, f=new FormData($('qt')), s=(R.servicios||[])[+f.get('tipo')]; if(!s) return;
+  const q=+$('qtN').value, uso=f.get('uso')||'', local=f.get('lugar')==='local';
+  setText('qtNo',q);
+  const cobradas=Math.max(q,+s.minimo||0), base=(+s.precio_base||0)+Math.max(0,cobradas-(+s.incluye_hasta||0))*(+s.precio_extra||0);
+  const trasl=local?(+R.traslado||0):0, total=base+trasl, city=(C.contacto||{}).ciudad||'';
+  const ticket=[center('FR STUDIOS'),center('Fotografía de producto'),center(city),LINE,center('COTIZACIÓN APROXIMADA'),LINE,
+    row('Folio',folio('FR-')),row('Fecha',today()),LINE,
+    row('Servicio',s.nombre||''),row('Cantidad',`${q} ${s.unidad||'piezas'}`),row('Uso',uso),row('Lugar',local?'Mi negocio':'Estudio'),LINE,
+    row('Sesión',fmt(base)),row('Traslado',fmt(trasl)),LINE,
+    row('TOTAL APROX.',fmt(total)+' MXN'),LINE,
+    ' Precio final lo confirma',' Francisco por este medio.','',center('Gracias por cotizar :)')].join('\n');
+  setText('qtTicket',ticket); printPaper($('qtPaper'));
+  $('qtBtn').href=waLink('Hola Francisco, quiero cotizar esta sesión:\n```\n'+ticket+'\n```');
+}
+$('qt').addEventListener('input',quote); $('qt').addEventListener('change',quote);
+
+// ---------- +Info ----------
+function renderInfo(){
+  const I=C.info||{};
+  $('portrait').innerHTML=I.retrato?`<img src="${esc(I.retrato)}" alt="${esc(I.nombre)}">`:'Tu retrato aquí · 4:5';
+  $('portrait').classList.toggle('has',!!I.retrato);
+  setText('iName',I.nombre); $('iBio').innerHTML=paras(I.bio);
+  $('steps').innerHTML=(I.proceso||[]).map((s,i)=>`<div><span class="n">${p2(i+1)}${s.tiempo?' · '+esc(s.tiempo):''}</span><h3>${esc(s.titulo)}</h3><p>${esc(s.texto)}</p></div>`).join('');
+  $('proceso').hidden=!(I.proceso||[]).length;
+  $('clients').innerHTML=(I.clientes||[]).map(c=>`<span>${esc(c)}</span>`).join('');
+  $('quotes').innerHTML=(I.testimonios||[]).map(t=>`<figure><blockquote>${esc(t.frase)}</blockquote><figcaption class="up muted">${esc(t.autor)}</figcaption></figure>`).join('');
+  $('quotes').hidden=!(I.testimonios||[]).length;
+  $('clientes').hidden=!(I.clientes||[]).length && !(I.testimonios||[]).length;
+  $('faqList').innerHTML=(I.faq||[]).map(f=>`<details><summary>${esc(f.pregunta)}</summary><p>${esc(f.respuesta)}</p></details>`).join('');
+  $('faq').hidden=!(I.faq||[]).length;
+}
+
+// ---------- Contacto ----------
+function renderContacto(){
+  const K=C.contacto||{};
+  waNum=String(K.whatsapp||'').replace(/\D/g,'');
+  setText('ctTitle',K.titulo); setText('ctText',K.texto);
+  const msg=K.mensaje_whatsapp||'Hola, vi tu página y quiero cotizar.';
+  $('waBtn').href=waLink(msg); $('waFloat').href=waLink(msg);
+  setText('c-wa',K.whatsapp_visible||K.whatsapp); setText('c-mail',K.correo); setText('c-city',K.ciudad);
+  const ig=String(K.instagram||'').replace(/^@/,'');
+  $('c-ig').innerHTML=ig?`<a href="https://www.instagram.com/${esc(ig)}/" target="_blank" rel="noopener">@${esc(ig)}</a>`:'';
+  $('ftIg').href=ig?`https://www.instagram.com/${ig}/`:'#'; $('ftIg').hidden=!ig;
+  setText('ftCopy',`© ${new Date().getFullYear()} FR Studios`);
+  const ld=document.createElement('script'); ld.type='application/ld+json';
+  ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ProfessionalService","name":"FR Studios","description":"Fotografía de producto, gastronomía y catálogo. Taller personalizado de fotografía de producto.","telephone":K.whatsapp_visible,"email":K.correo,"areaServed":K.ciudad,"address":{"@type":"PostalAddress","addressLocality":String(K.ciudad||'').split(',')[0],"addressRegion":"Sinaloa","addressCountry":"MX"},"sameAs":ig?[`https://www.instagram.com/${ig}/`]:[]});
+  document.head.appendChild(ld);
+}
+
+// ---------- Ticket como imagen JPG ----------
+async function ticketJpeg(text){
+  try{ await document.fonts.load('400 26px "IBM Plex Mono"'); await document.fonts.load('500 26px "IBM Plex Mono"'); }catch(e){}
+  const lines=text.split('\n'), fs=26, lh=40, pad=56, marg=40, zz=14;
+  const c=document.createElement('canvas'), x=c.getContext('2d');
+  x.font=`400 ${fs}px "IBM Plex Mono", Menlo, monospace`;
+  const cw=Math.max(...lines.map(l=>x.measureText(l).width));
+  const pw=Math.ceil(cw+pad*2), ph=Math.ceil(lines.length*lh+pad*2);
+  c.width=pw+marg*2; c.height=ph+marg*2+zz*2;
+  x.fillStyle='#E9E9E6'; x.fillRect(0,0,c.width,c.height);
+  const left=marg, top=marg+zz, right=marg+pw, bottom=top+ph;
+  x.save(); x.shadowColor='rgba(0,0,0,.18)'; x.shadowBlur=24; x.shadowOffsetY=10;
+  x.beginPath(); x.moveTo(left,top);
+  for(let px=left; px<right; px+=zz*2){ x.lineTo(px+zz, top-zz); x.lineTo(Math.min(px+zz*2,right), top); }
+  x.lineTo(right,bottom);
+  for(let px=right; px>left; px-=zz*2){ x.lineTo(px-zz, bottom+zz); x.lineTo(Math.max(px-zz*2,left), bottom); }
+  x.closePath(); x.fillStyle='#FFFFFF'; x.fill(); x.restore();
+  x.textBaseline='top';
+  lines.forEach((l,i)=>{
+    const strong=/FR STUDIOS|TOTAL|ANTICIPO|COTIZACIÓN|RESERVA/.test(l);
+    x.font=`${strong?500:400} ${fs}px "IBM Plex Mono", Menlo, monospace`;
+    x.fillStyle=strong?'#111113':'#2A2A2C';
+    x.fillText(l, left+pad, top+pad+i*lh);
+  });
+  return new Promise(res=>c.toBlob(b=>res({blob:b, url:c.toDataURL('image/jpeg',.92)}),'image/jpeg',.92));
+}
+const im=$('im'), imImg=$('imImg'), imShare=$('imShare'), imMsg=$('imMsg');
+let imFile=null, imLast=null;
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-ticket]'); if(!b) return;
+  imLast=b;
+  const {blob,url}=await ticketJpeg($(b.dataset.ticket).textContent);
+  imFile=new File([blob], b.dataset.name+'.jpg', {type:'image/jpeg'});
+  imImg.src=url; imMsg.textContent='';
+  let ok=false; try{ ok=!!(navigator.canShare && navigator.canShare({files:[imFile]})); }catch(err){}
+  imShare.hidden=!ok;
+  im.hidden=false; document.body.style.overflow='hidden'; $('imClose').focus();
+});
+function imClose(){ im.hidden=true; document.body.style.overflow=''; if(imLast) imLast.focus(); }
+$('imClose').onclick=imClose;
+im.addEventListener('click',e=>{ if(e.target===im) imClose(); });
+imShare.onclick=async()=>{
+  try{ await navigator.share({files:[imFile], title:'Ticket FR Studios'}); imMsg.textContent='Elige WhatsApp y el chat de Francisco.'; }
+  catch(e){ imMsg.textContent='No se abrió el menú de compartir. Mantén presionada la imagen para guardarla.'; }
+};
+$('imCopy').onclick=()=>{
+  const fail=()=>{ imMsg.textContent='Tu navegador no deja copiar imágenes. Mantén presionada la imagen para guardarla.'; };
+  try{
+    navigator.clipboard.write([new ClipboardItem({'image/png': new Promise(r=>{ const i=new Image(); i.onload=()=>{ const c=document.createElement('canvas'); c.width=i.naturalWidth; c.height=i.naturalHeight; c.getContext('2d').drawImage(i,0,0); c.toBlob(r,'image/png'); }; i.src=imImg.src; })})])
+      .then(()=>{ imMsg.textContent='Imagen copiada. Pégala en el chat de WhatsApp.'; }).catch(fail);
+  }catch(e){ fail(); }
+};
+
+document.addEventListener('keydown',e=>{
+  if(!im.hidden && e.key==='Escape'){ imClose(); return; }
+  if(lb.hidden) return;
+  if(e.key==='Escape') lbClose(); if(e.key==='ArrowRight') lbStep(1); if(e.key==='ArrowLeft') lbStep(-1);
+});
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>{
+  const el=$(btn.dataset.copy), txt=el.textContent.trim();
+  const sel=()=>{ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try{ navigator.clipboard.writeText(txt).then(()=>{ btn.textContent='Copiado'; setTimeout(()=>btn.textContent='Copiar',1500); }).catch(sel); }catch(e){ sel(); }
+}));
+
+// ---------- Secciones ----------
+const views=[...document.querySelectorAll('.view')], navLinks=[...document.querySelectorAll('.menu a')];
+function route(){
+  const id=(location.hash||'#portafolio').slice(1);
+  const el=document.getElementById(id);
+  const view=(el && el.closest('.view')) || views[0];
+  views.forEach(v=>{ const on=v===view; if(on && v.hidden){ v.classList.remove('enter'); void v.offsetWidth; v.classList.add('enter'); } v.hidden=!on; });
+  navLinks.forEach(a=>{ if(a.getAttribute('href')==='#'+view.id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  if(!el || el===view || el===view.querySelector('section')) window.scrollTo(0,0);
+  else window.scrollTo(0, el.getBoundingClientRect().top+window.scrollY-document.querySelector('header.top').offsetHeight-12);
+}
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{ const a=e.target.closest('a[href^="#"]'); if(a && a.getAttribute('href')===location.hash){ e.preventDefault(); route(); } });
+
+// ---------- Cargar contenido ----------
+(async()=>{
+  const names=['contacto','portafolio','cursos','precios','info'];
+  try{
+    const data=await Promise.all(names.map(n=>fetch('content/'+n+'.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error(n); return r.json(); })));
+    names.forEach((n,i)=>C[n]=data[i]);
+    renderContacto(); renderPortafolio(); renderCursos(); renderPrecios(); renderInfo();
+    $('loading').hidden=true;
+  }catch(err){
+    $('loading').textContent='No se pudo cargar el contenido. Recarga la página en un momento.';
+  }
+  route();
+})();
+</script>
+</body>
+</html>

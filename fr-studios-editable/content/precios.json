@@ -1,0 +1,103 @@
+{
+  "nota": "Precios desde, para que tengas una idea antes de escribir.",
+  "aviso": "Precios de ejemplo",
+  "paquetes": [
+    {
+      "nombre": "Fondo blanco",
+      "precio": 180,
+      "unidad": "por pieza",
+      "incluye": [
+        "Mínimo 10 piezas",
+        "Listo para recorte",
+        "3 ángulos por producto",
+        "JPG para tienda y redes"
+      ]
+    },
+    {
+      "nombre": "Gastronomía",
+      "precio": 3800,
+      "unidad": "por sesión",
+      "incluye": [
+        "3 horas en tu restaurante",
+        "Hasta 15 platillos y bebidas",
+        "Ambiente y equipo",
+        "Edición de color incluida"
+      ]
+    },
+    {
+      "nombre": "Catálogo",
+      "precio": 7500,
+      "unidad": "por proyecto",
+      "incluye": [
+        "Hasta 40 piezas",
+        "Misma luz y escala",
+        "Fondo blanco y lifestyle",
+        "Una ronda de ajustes"
+      ]
+    }
+  ],
+  "servicios": [
+    {
+      "nombre": "Fondo blanco",
+      "boton": "Producto en fondo blanco",
+      "precio_base": 0,
+      "incluye_hasta": 0,
+      "precio_extra": 180,
+      "minimo": 10,
+      "unidad": "piezas"
+    },
+    {
+      "nombre": "Gastronomía",
+      "boton": "Platillos y bebidas",
+      "precio_base": 3800,
+      "incluye_hasta": 15,
+      "precio_extra": 220,
+      "minimo": 0,
+      "unidad": "platillos"
+    },
+    {
+      "nombre": "Lifestyle",
+      "boton": "Producto en uso",
+      "precio_base": 2800,
+      "incluye_hasta": 10,
+      "precio_extra": 200,
+      "minimo": 0,
+      "unidad": "piezas"
+    },
+    {
+      "nombre": "Catálogo",
+      "boton": "Catálogo completo",
+      "precio_base": 7500,
+      "incluye_hasta": 40,
+      "precio_extra": 170,
+      "minimo": 0,
+      "unidad": "piezas"
+    }
+  ],
+  "traslado": 600,
+  "usos": [
+    "Tienda en línea",
+    "Redes sociales",
+    "Menú",
+    "Impreso"
+  ],
+  "condiciones": [
+    {
+      "titulo": "Uso",
+      "texto": "Tus fotos se usan en tu tienda, redes, menú y publicidad. No se revenden ni se ceden a otra marca. Pueden aparecer en mi portafolio."
+    },
+    {
+      "titulo": "Anticipo",
+      "texto": "La fecha se aparta con el 50%. El resto se paga al entregar las fotos editadas."
+    },
+    {
+      "titulo": "Cambios",
+      "texto": "Puedes mover tu fecha sin costo avisando con 48 horas. Con menos aviso, el anticipo se pierde."
+    },
+    {
+      "titulo": "Entrega",
+      "texto": "Liga de descarga por 30 días. Guardo un respaldo de tus fotos por 6 meses."
+    }
+  ],
+  "aviso_condiciones": "Condiciones de ejemplo"
+}
