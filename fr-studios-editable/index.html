@@ -18,20 +18,17 @@ img{max-width:100%}
 
 /* Layout: galería primero, como una hoja de contactos; todo en letra de máquina de escribir, mucho blanco, líneas finas */
 :root{
-  --bg:#FAFAF8; --fg:#161616; --muted:#77746E; --line:#E3E1DC; --soft:#F0EEEA;
+  --bg:#FFFFFF; --fg:#111111; --muted:#555555; --line:#E6E6E6; --soft:#F3F3F3;
   --paper:#FFFFFF; --paper-ink:#1C1C1E; --wa:#1F8F55;
   --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, "Courier New", monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#121212; --fg:#ECEAE5; --muted:#9A978F; --line:#2A2A28; --soft:#1B1B1A; color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121212; --fg:#ECEAE5; --muted:#9A978F; --line:#2A2A28; --soft:#1B1B1A; color-scheme:dark}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{background:var(--bg); color:var(--fg); font-family:var(--mono); font-size:14.5px; line-height:1.75; font-weight:400; -webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:1px solid var(--fg); outline-offset:3px}
-.wrap{max-width:1320px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+.wrap{max-width:1600px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
 .narrow{max-width:62ch}
 .up{text-transform:uppercase; letter-spacing:.14em; font-size:.74rem}
 .muted{color:var(--muted)}
@@ -43,22 +40,32 @@ p{margin:0}
 
 /* Header */
 body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
-header.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--bg)}
-header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:26px 22px}
-.logo{text-decoration:none; font-weight:500; font-size:1rem; letter-spacing:.32em; white-space:nowrap}
-.menu ul{list-style:none; margin:0; padding:0; display:flex; gap:30px}
-.menu a{text-decoration:none; color:var(--muted); font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; padding-block:4px; border-bottom:1px solid transparent; white-space:nowrap}
-.menu a:hover{color:var(--fg)}
-.menu a[aria-current="page"]{color:var(--fg); border-bottom-color:var(--fg)}
-@media (max-width:760px){
-  header.top .wrap{flex-direction:column; align-items:flex-start; gap:12px; padding-block:18px 12px}
-  .menu{width:100%; overflow-x:auto; scrollbar-width:none}
-  .menu::-webkit-scrollbar{display:none}
-  .menu ul{gap:22px; width:max-content}
+header.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:8; background:var(--bg); transition:transform .3s ease}
+header.top.hide{transform:translateY(-110%)}
+header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:32px; padding-block:34px 30px}
+.logo{text-decoration:none; font-weight:500; font-size:1.12rem; letter-spacing:.3em; white-space:nowrap; color:var(--fg)}
+.menu ul{list-style:none; margin:0; padding:0; display:flex; gap:36px}
+.menu a{text-decoration:none; color:var(--fg); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; padding-block:4px; border-bottom:1px solid transparent; white-space:nowrap}
+.menu a:hover{border-bottom-color:var(--line)}
+.menu a[aria-current="page"]{border-bottom-color:var(--fg)}
+.burger{display:none; width:44px; height:44px; border:0; background:none; padding:0; cursor:pointer; color:var(--fg); position:relative; z-index:12}
+.burger span{position:absolute; left:8px; right:8px; height:1.5px; background:currentColor; transition:transform .25s, opacity .2s}
+.burger span:nth-child(1){top:16px} .burger span:nth-child(2){top:27px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){transform:translateY(-5.5px) rotate(-45deg)}
+@media (max-width:900px){
+  header.top .wrap{padding-block:22px 18px}
+  .burger{display:block}
+  .menu{position:fixed; inset:0; z-index:11; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:max(24px, env(safe-area-inset-top,0px)) 24px 24px; opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s}
+  .menu.open{opacity:1; visibility:visible}
+  .menu ul{flex-direction:column; align-items:center; gap:26px}
+  .menu a{font-size:1.05rem; letter-spacing:.22em}
 }
+@media (min-width:901px){ header.top .wrap{padding-inline:max(56px, env(safe-area-inset-left,0px)) max(56px, env(safe-area-inset-right,0px))} }
 
 /* Vistas */
-.view{padding-block:24px 120px}
+.view{padding-block:8px 120px}
+@media (min-width:901px){ #portafolio .wrap{padding-inline:56px} }
 @media (prefers-reduced-motion:no-preference){ .view.enter{animation:fade .35s ease both} }
 @keyframes fade{from{opacity:.001} to{opacity:1}}
 .block{padding-top:96px}
@@ -67,20 +74,23 @@ header.top .wrap{display:flex; align-items:center; justify-content:space-between
 .head p{color:var(--muted); max-width:52ch}
 
 /* Portafolio */
-.intro{display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap; margin-bottom:28px}
+.intro{display:flex; justify-content:center; margin-bottom:26px}
 .intro p{max-width:56ch}
 .filters{display:flex; gap:22px; flex-wrap:wrap}
 .filters button{background:none; border:0; padding:2px 0; font-family:var(--mono); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); cursor:pointer; border-bottom:1px solid transparent}
 .filters button[aria-pressed="true"]{color:var(--fg); border-bottom-color:var(--fg)}
-.grid{columns:3 300px; column-gap:14px}
-.ph{display:block; width:100%; break-inside:avoid; margin:0 0 14px; padding:0; border:0; background:none; text-align:left; cursor:zoom-in; font-family:var(--mono); color:var(--fg)}
+@media (max-width:600px){ .intro{justify-content:flex-start; overflow-x:auto; scrollbar-width:none; margin-bottom:18px} .intro::-webkit-scrollbar{display:none} .filters{flex-wrap:nowrap; gap:18px; width:max-content} .filters button{white-space:nowrap} }
+.grid{column-count:5; column-gap:18px}
+@media (max-width:1300px){ .grid{column-count:4; column-gap:14px} }
+@media (max-width:1000px){ .grid{column-count:3; column-gap:10px} }
+@media (max-width:600px){ .grid{column-count:3; column-gap:5px} .ph{margin-bottom:5px !important} }
+.ph{display:block; width:100%; break-inside:avoid; margin:0 0 18px; padding:0; border:0; background:none; text-align:left; cursor:zoom-in; font-family:var(--mono); color:var(--fg)}
 .ph .img{display:block; width:100%; max-width:100%; position:relative; overflow:hidden}
 .ph .img::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 32% 16%, rgba(255,255,255,.55), rgba(255,255,255,0) 58%)}
 .ph .img::after{content:""; position:absolute; left:50%; bottom:20%; width:34%; height:7%; transform:translateX(-50%); background:radial-gradient(ellipse, rgba(20,20,20,.28), transparent 70%); filter:blur(6px)}
 .ph img{display:block; width:100%; height:auto}
-.ph .cap{display:flex; justify-content:space-between; gap:12px; padding-top:8px; font-size:.7rem; letter-spacing:.06em; color:var(--muted)}
+.ph .cap{display:none; justify-content:space-between; gap:12px; padding-top:8px; font-size:.7rem; letter-spacing:.06em; color:var(--muted)}
 .ph .cap i{font-style:normal}
-@media (hover:hover){ .ph .cap{opacity:0; transition:opacity .2s} .ph:hover .cap,.ph:focus-visible .cap{opacity:1} }
 @media (prefers-reduced-motion:no-preference){ .ph .img{transition:opacity .25s} .ph:hover .img{opacity:.88} }
 .note{margin-top:8px; font-size:.7rem; color:var(--muted)}
 
@@ -219,7 +229,6 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
   .gift{grid-template-columns:minmax(0,1fr)}
   .row{grid-template-columns:minmax(0,1fr) auto}
   .row dt{grid-column:1 / -1}
-  .grid{column-gap:10px} .ph{margin-bottom:10px}
   .block{padding-top:72px}
 }
 
@@ -236,7 +245,8 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#portafolio">FR STUDIOS</a>
-    <nav class="menu" aria-label="Secciones"><ul>
+    <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <nav class="menu" id="menu" aria-label="Secciones"><ul>
       <li><a href="#portafolio">Portafolio</a></li>
       <li><a href="#cursos">Cursos</a></li>
       <li><a href="#precios">Precios</a></li>
@@ -253,7 +263,7 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
 <div class="view" id="portafolio">
   <div class="wrap">
     <div class="intro">
-      <p><span id="pfIntro"></span><br><span class="muted" id="pfCity"></span></p>
+      <h1 style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)"><span id="pfIntro"></span> <span id="pfCity"></span></h1>
       <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
     </div>
     <div class="grid" id="grid"></div>
@@ -642,6 +652,15 @@ document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('clic
   const sel=()=>{ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); };
   try{ navigator.clipboard.writeText(txt).then(()=>{ btn.textContent='Copiado'; setTimeout(()=>btn.textContent='Copiar',1500); }).catch(sel); }catch(e){ sel(); }
 }));
+
+// ---------- Menú (celular) y barra que se esconde al bajar ----------
+const burger=$('burger'), menu=$('menu'), header=document.querySelector('header.top');
+function setMenu(open){ menu.classList.toggle('open',open); burger.setAttribute('aria-expanded',open); burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); document.body.style.overflow=open?'hidden':''; }
+burger.onclick=()=>setMenu(!menu.classList.contains('open'));
+menu.addEventListener('click',e=>{ if(e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape' && menu.classList.contains('open')) setMenu(false); });
+let lastY=scrollY;
+addEventListener('scroll',()=>{ const y=scrollY; header.classList.toggle('hide', y>lastY && y>140 && !menu.classList.contains('open')); lastY=y; },{passive:true});
 
 // ---------- Secciones ----------
 const views=[...document.querySelectorAll('.view')], navLinks=[...document.querySelectorAll('.menu a')];
