@@ -36,6 +36,49 @@ content:
             options:
               values: [Producto, Gastronomía, Lifestyle, Catálogo]
 
+  - name: detras
+    label: Detrás de cámara
+    type: file
+    path: fr-studios-editable/content/detras.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título de la sección
+        type: string
+      - name: texto
+        label: Texto debajo del título
+        type: string
+      - name: proyectos
+        label: Proyectos
+        description: Cada proyecto es un carrusel. Sube 3 fotos del proceso y al final la foto terminada.
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{nombre}"
+        fields:
+          - name: nombre
+            label: Nombre del proyecto (ej. Postre Chokolá)
+            type: string
+          - name: descripcion
+            label: Descripción corta (opcional)
+            type: string
+          - name: proceso
+            label: Fotos del proceso
+            type: object
+            list:
+              max: 6
+            fields:
+              - name: foto
+                label: Foto
+                type: image
+              - name: nota
+                label: Qué se ve (ej. Armado del set)
+                type: string
+          - name: final
+            label: Foto del resultado final
+            type: image
+
   - name: cursos
     label: Cursos
     type: file
@@ -117,6 +160,16 @@ content:
       - name: presentacion
         label: Enlace a la presentación de Canva (vacío para ocultar el botón)
         type: string
+      - name: galeria
+        label: Fotos del taller (3 o 4, se ven debajo del curso)
+        description: Sube 3 o 4 fotos tuyas dando clase o del material. Arrastra para cambiar el orden. Si dejas la lista vacía, no se muestran.
+        type: object
+        list:
+          max: 4
+        fields:
+          - name: foto
+            label: Foto
+            type: image
       - name: regalo_titulo
         label: Título de la tarjeta de regalo (vacío para ocultar)
         type: string
