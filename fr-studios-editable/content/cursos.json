@@ -13,8 +13,7 @@
   "temario": [
     {
       "titulo": "Introducción",
-      "descripcion": "Qué hace que una foto de producto venda y cómo vamos a trabajar.",
-      "practica": ""
+      "descripcion": "Qué hace que una foto de producto venda y cómo vamos a trabajar."
     },
     {
       "titulo": "Cámara y exposición",
@@ -23,8 +22,7 @@
     },
     {
       "titulo": "Montaje del set",
-      "descripcion": "Fondo blanco o infinito con lo que tengas a la mano. Trípode o apoyo estable.",
-      "practica": ""
+      "descripcion": "Fondo blanco o infinito con lo que tengas a la mano. Trípode o apoyo estable."
     },
     {
       "titulo": "Composición",
@@ -38,18 +36,15 @@
     },
     {
       "titulo": "Toma final de producto",
-      "descripcion": "Fondo blanco para catálogo: recorte limpio, textura, nitidez y color exacto.",
-      "practica": ""
+      "descripcion": "Fondo blanco para catálogo: recorte limpio, textura, nitidez y color exacto."
     },
     {
       "titulo": "Edición en Lightroom",
-      "descripcion": "Recorte, color y presets. Exportación para redes o tienda en línea.",
-      "practica": ""
+      "descripcion": "Recorte, color y presets. Exportación para redes o tienda en línea."
     },
     {
       "titulo": "Cierre",
-      "descripcion": "Revisamos juntos tus fotos y lo que puedes mejorar.",
-      "practica": ""
+      "descripcion": "Revisamos juntos tus fotos y lo que puedes mejorar."
     }
   ],
   "fechas": [
@@ -73,6 +68,17 @@
   "aviso_fechas": "Fechas de ejemplo",
   "nota_anticipo": "Se requiere anticipo para apartar fecha.",
   "presentacion": "https://www.canva.com/d/94mzkusvPKb_5zX",
+  "galeria": [
+    {
+      "foto": "/media/tempImager215B8.jpg"
+    },
+    {
+      "foto": "/media/tempImageIJJ2dJ.jpg"
+    },
+    {
+      "foto": "/media/tempImageDWmvFM.jpg"
+    }
+  ],
   "regalo_titulo": "Regala el taller",
   "regalo_texto": "Para alguien que vende en línea o tiene un negocio de comida. Te mando una tarjeta digital y la persona elige su fecha. Vigencia de 6 meses."
 }
