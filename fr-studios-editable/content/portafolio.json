@@ -43,8 +43,9 @@
       "categoria": "Gastronomía"
     },
     {
-      "titulo": "Reflejos",
-      "categoria": "Producto"
+      "foto": "/media/IMG_4393.jpg",
+      "titulo": "Entornos",
+      "categoria": "Lifestyle"
     },
     {
       "titulo": "Ambiente",
