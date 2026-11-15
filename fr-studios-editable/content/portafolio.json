@@ -72,12 +72,14 @@
       "categoria": "Gastronomía"
     },
     {
-      "titulo": "Equipo",
-      "categoria": "Lifestyle"
+      "foto": "/media/IMG_9667.jpg",
+      "titulo": "Zoom",
+      "categoria": "Gastronomía"
     },
     {
-      "titulo": "Escala",
-      "categoria": "Catálogo"
+      "foto": "/media/IMG_9467.jpg",
+      "titulo": "Tostada ",
+      "categoria": "Gastronomía"
     }
   ]
 }
