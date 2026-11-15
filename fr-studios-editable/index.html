@@ -53,7 +53,7 @@ header.top .wrap{display:flex; align-items:center; justify-content:space-between
 .burger span:nth-child(1){top:16px} .burger span:nth-child(2){top:27px}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){transform:translateY(-5.5px) rotate(-45deg)}
-@media (max-width:900px){
+@media (max-width:1100px){
   header.top .wrap{padding-block:22px 18px}
   .burger{display:block}
   .menu{position:fixed; inset:0; z-index:11; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:max(24px, env(safe-area-inset-top,0px)) 24px 24px; opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s}
@@ -61,7 +61,7 @@ header.top .wrap{display:flex; align-items:center; justify-content:space-between
   .menu ul{flex-direction:column; align-items:center; gap:26px}
   .menu a{font-size:1.05rem; letter-spacing:.22em}
 }
-@media (min-width:901px){ header.top .wrap{padding-inline:max(56px, env(safe-area-inset-left,0px)) max(56px, env(safe-area-inset-right,0px))} }
+@media (min-width:1101px){ header.top .wrap{padding-inline:max(56px, env(safe-area-inset-left,0px)) max(56px, env(safe-area-inset-right,0px))} }
 
 /* Vistas */
 .view{padding-block:8px 120px}
@@ -124,6 +124,35 @@ header.top .wrap{display:flex; align-items:center; justify-content:space-between
 .date:disabled{opacity:.4; cursor:not-allowed; text-decoration:line-through}
 .gift{margin-top:96px; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px 48px; align-items:center; padding:28px 0; border-block:1px solid var(--line)}
 .gift p{color:var(--muted); max-width:58ch; margin-top:6px}
+
+/* Detrás de cámara */
+.projects{display:flex; flex-direction:column; gap:84px}
+.proj-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:18px}
+.proj-head p{color:var(--muted); margin-top:4px}
+.arrows{display:flex; gap:8px; flex:0 0 auto}
+.arrows button{width:44px; height:44px; border:1px solid var(--line); background:var(--bg); color:var(--fg); font-family:var(--mono); font-size:1rem; cursor:pointer}
+.arrows button:hover{border-color:var(--fg)}
+.arrows button:disabled{opacity:.3; cursor:default}
+.reel{display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 48px) / 3.25); gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; padding-bottom:4px}
+.reel::-webkit-scrollbar{display:none}
+.slide{scroll-snap-align:start; display:flex; flex-direction:column; gap:10px; padding:0; border:0; background:none; text-align:left; cursor:zoom-in; font-family:var(--mono); color:var(--fg); min-width:0}
+.slide .img{display:block; width:100%; aspect-ratio:4/5; overflow:hidden}
+.slide img{display:block; width:100%; height:100%; object-fit:cover}
+.slide .lbl{font-size:.74rem; letter-spacing:.06em; color:var(--muted)}
+.slide .lbl b{color:var(--fg); font-weight:500; margin-right:8px}
+.slide.final .lbl b{background:var(--fg); color:var(--bg); padding:3px 8px; letter-spacing:.12em; text-transform:uppercase; font-size:.68rem}
+@media (max-width:760px){ .reel{grid-auto-columns:78%; gap:10px} .arrows{display:none} }
+@media (prefers-reduced-motion:reduce){ .reel{scroll-behavior:auto} }
+
+/* Fotos del taller */
+.classes{margin-top:72px}
+.cgrid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+.cgrid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){ .cgrid,.cgrid.n3{grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px} }
+.cshot{display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in}
+.cshot .img{display:block; width:100%; aspect-ratio:4/5; overflow:hidden}
+.cshot img{display:block; width:100%; height:100%; object-fit:cover}
+@media (prefers-reduced-motion:no-preference){ .cshot .img{transition:opacity .25s} .cshot:hover .img{opacity:.88} }
 
 /* Ticket (papel térmico, igual en ambos temas) */
 .paper{position:relative; background:var(--paper); color:var(--paper-ink); padding:18px 16px 14px; margin-bottom:10px; box-shadow:0 14px 26px -20px rgba(0,0,0,.55); max-width:100%; border:1px solid rgba(0,0,0,.06)}
@@ -248,6 +277,7 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
     <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav class="menu" id="menu" aria-label="Secciones"><ul>
       <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#detras">Detrás de cámara</a></li>
       <li><a href="#cursos">Cursos</a></li>
       <li><a href="#precios">Precios</a></li>
       <li><a href="#info">+Info</a></li>
@@ -267,6 +297,16 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
       <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
     </div>
     <div class="grid" id="grid"></div>
+  </div>
+</div>
+
+<!-- DETRÁS DE CÁMARA -->
+<div class="view" id="detras" hidden>
+  <div class="wrap">
+    <section class="block" id="bts">
+      <div class="head"><h2 id="dtTitle">Detrás de cámara</h2><p id="dtText"></p></div>
+      <div class="projects" id="dtList"></div>
+    </section>
   </div>
 </div>
 
@@ -302,6 +342,9 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
           </div>
           <p class="muted" style="font-size:.78rem" id="cDeposit"></p>
         </aside>
+      </div>
+      <div class="classes" id="clases">
+        <div class="cgrid" id="cgrid"></div>
       </div>
       <div class="gift" id="gift">
         <div><h3 id="gTitle"></h3><p id="gText"></p></div>
@@ -449,7 +492,7 @@ function printPaper(el){ el.classList.remove('print'); void el.offsetWidth; el.c
 const TONES=['#D9D6CF','#CFC9BF','#E2DFD8','#C9C4BA','#D4CEC4','#DEDAD2','#C6C1B8','#D8D2C8'];
 const RATIOS=['4/5','3/2','2/3','1/1','4/5','3/4','3/2','1/1','2/3'];
 const CAT_ORDER=['Producto','Gastronomía','Lifestyle','Catálogo'];
-let photos=[], shown=[], filter='Todo';
+let photos=[], shown=[], filter='Todo', lbList=[], classShots=[];
 function renderPortafolio(){
   const P=C.portafolio||{};
   setText('pfIntro',P.intro); setText('pfCity',P.ciudad);
@@ -470,21 +513,46 @@ $('filters').addEventListener('click',e=>{ const b=e.target.closest('button'); i
 const lb=$('lb'), lbImg=$('lbImg');
 let lbI=0, lbLast=null;
 function lbShow(){
-  const p=shown[lbI];
+  const p=lbList[lbI];
   if(p.foto){ lbImg.className='lb-img real'; lbImg.style.aspectRatio=''; lbImg.style.background='transparent'; lbImg.innerHTML=`<img src="${esc(p.foto)}" alt="${esc(p.titulo)}">`; }
   else { lbImg.className='lb-img'; lbImg.style.aspectRatio=p.r; lbImg.style.background=p.bg; lbImg.innerHTML=''; }
   setText('lbName',p.file);
-  setText('lbInfo',`${p.categoria||''}${p.titulo?' · '+p.titulo:''} · ${lbI+1}/${shown.length}`);
+  setText('lbInfo',`${p.categoria||''}${p.titulo?' · '+p.titulo:''} · ${lbI+1}/${lbList.length}`);
 }
-function lbOpen(i){ lbLast=document.activeElement; lbI=i; lbShow(); lb.hidden=false; document.body.style.overflow='hidden'; $('lbClose').focus(); }
+function lbOpen(i,list){ lbList=list||shown; lbLast=document.activeElement; lbI=i; lbShow(); lb.hidden=false; document.body.style.overflow='hidden'; $('lbClose').focus(); }
 function lbClose(){ lb.hidden=true; document.body.style.overflow=''; if(lbLast) lbLast.focus(); }
-function lbStep(d){ lbI=(lbI+d+shown.length)%shown.length; lbShow(); }
-$('grid').addEventListener('click',e=>{ const b=e.target.closest('.ph'); if(b) lbOpen(+b.dataset.i); });
+function lbStep(d){ lbI=(lbI+d+lbList.length)%lbList.length; lbShow(); }
+$('grid').addEventListener('click',e=>{ const b=e.target.closest('.ph'); if(b) lbOpen(+b.dataset.i, shown); });
+$('cgrid').addEventListener('click',e=>{ const b=e.target.closest('.cshot'); if(b) lbOpen(+b.dataset.i, classShots); });
 $('lbClose').onclick=lbClose; $('lbPrev').onclick=()=>lbStep(-1); $('lbNext').onclick=()=>lbStep(1);
 $('lbStage').addEventListener('click',e=>{ if(e.target.id==='lbStage') lbClose(); });
 let sx=null;
 lb.addEventListener('pointerdown',e=>{ sx=e.clientX; });
 lb.addEventListener('pointerup',e=>{ if(sx===null) return; const dx=e.clientX-sx; sx=null; if(Math.abs(dx)>50) lbStep(dx<0?1:-1); });
+
+// ---------- Detrás de cámara ----------
+const DETRAS_EJEMPLO={titulo:'Detrás de cámara',texto:'Así se construye una foto: del set armado al resultado final.',proyectos:[{nombre:'Postre para menú',descripcion:'Ejemplo: fondo blanco, una sola luz y difusor.',proceso:[{nota:'Armado del set'},{nota:'Prueba de luz'},{nota:'Ajuste de composición'}],final:''}]};
+let btsLists=[];
+function renderDetras(){
+  const D=C.detras||DETRAS_EJEMPLO;
+  setText('dtTitle',D.titulo||'Detrás de cámara'); setText('dtText',D.texto);
+  const projs=(D.proyectos||[]);
+  btsLists=projs.map((pr,pi)=>{
+    const steps=(pr.proceso||[]).map((s,i)=>({foto:s.foto||'', titulo:s.nota||'', categoria:pr.nombre||'Proceso', file:s.foto?String(s.foto).split('/').pop():'Paso '+(i+1), bg:TONES[(pi*2+i)%TONES.length], r:'4/5', lbl:`<b>${p2(i+1)}</b>${esc(s.nota||'')}`}));
+    steps.push({foto:pr.final||'', titulo:'Resultado final', categoria:pr.nombre||'Proceso', file:pr.final?String(pr.final).split('/').pop():'Resultado final', bg:'#CFC9BF', r:'4/5', lbl:'<b>Resultado final</b>', final:true});
+    return steps;
+  });
+  $('dtList').innerHTML=projs.length?projs.map((pr,pi)=>`<article class="proj"><div class="proj-head"><div><h3>${esc(pr.nombre||'')}</h3>${pr.descripcion?`<p>${esc(pr.descripcion)}</p>`:''}</div><div class="arrows"><button type="button" data-dir="-1" aria-label="Fotos anteriores">←</button><button type="button" data-dir="1" aria-label="Fotos siguientes">→</button></div></div><div class="reel" tabindex="0" aria-label="Fotos del proceso de ${esc(pr.nombre||'')}">${btsLists[pi].map((p,i)=>`<button type="button" class="slide${p.final?' final':''}" data-p="${pi}" data-i="${i}" aria-label="Ver ${esc(p.titulo||p.file)} en grande">${p.foto?`<span class="img"><img src="${esc(p.foto)}" alt="${esc(p.titulo)}" loading="lazy"></span>`:`<span class="img" style="background:${p.bg}"></span>`}<span class="lbl">${p.lbl}</span></button>`).join('')}</div></article>`).join(''):'<p class="muted">Pronto nuevos proyectos.</p>';
+  $('dtList').querySelectorAll('.proj').forEach(art=>{
+    const reel=art.querySelector('.reel'), [prev,next]=art.querySelectorAll('.arrows button');
+    const upd=()=>{ prev.disabled=reel.scrollLeft<=4; next.disabled=reel.scrollLeft+reel.clientWidth>=reel.scrollWidth-4; };
+    art.querySelector('.arrows').onclick=e=>{ const b=e.target.closest('button'); if(!b) return; const w=reel.querySelector('.slide').getBoundingClientRect().width+16; reel.scrollBy({left:w*(+b.dataset.dir),behavior:'smooth'}); };
+    reel._upd=upd; reel.addEventListener('scroll',upd,{passive:true}); upd();
+  });
+}
+function updateReels(){ document.querySelectorAll('.reel').forEach(r=>r._upd&&r._upd()); }
+addEventListener('resize',updateReels);
+$('dtList').addEventListener('click',e=>{ const b=e.target.closest('.slide'); if(b) lbOpen(+b.dataset.i, btsLists[+b.dataset.p]); });
 
 // ---------- Cursos ----------
 function tallerTicket(d){
@@ -524,6 +592,12 @@ function renderCursos(){
   $('dates').innerHTML=fechas.length?fechas.map((f,i)=>{ const full=/lleno/i.test(f.estado||''); return `<button type="button" class="date" data-i="${i}" ${full?'disabled':'aria-pressed="false"'}><b>${f.d.getDate()}</b><span>${esc(DAYS[f.d.getDay()])} · ${esc(f.estado||'Libre')}</span></button>`; }).join(''):'<p class="muted" style="grid-column:1/-1; font-size:.85rem">Pronto nuevas fechas. Escríbeme para apartar la tuya.</p>';
   $('dates').onclick=e=>{ const b=e.target.closest('.date:not([disabled])'); if(!b) return; [...$('dates').querySelectorAll('.date:not([disabled])')].forEach(x=>x.setAttribute('aria-pressed',x===b)); setTaller(fechas[+b.dataset.i].d); };
   setTaller(null);
+  // Fotos del taller (3 o 4). Sin fotos guardadas todavía: 4 marcos de ejemplo
+  const gal=(Array.isArray(K.galeria)?K.galeria:[{},{},{},{}]).slice(0,4);
+  classShots=gal.map((g,i)=>({foto:g.foto||'', titulo:'', categoria:'Taller', file:g.foto?String(g.foto).split('/').pop():'Foto del taller '+(i+1), bg:TONES[(i+3)%TONES.length], r:'4/5'}));
+  $('cgrid').className='cgrid'+(classShots.length===3?' n3':'');
+  $('cgrid').innerHTML=classShots.map((p,i)=>`<button type="button" class="cshot" data-i="${i}" aria-label="Ver foto del taller ${i+1} en grande">${p.foto?`<span class="img"><img src="${esc(p.foto)}" alt="Foto del taller" loading="lazy"></span>`:`<span class="img" style="background:${p.bg}"></span>`}</button>`).join('');
+  $('clases').hidden=!classShots.length;
   $('gift').hidden=!K.regalo_titulo; setText('gTitle',K.regalo_titulo); setText('gText',K.regalo_texto);
   $('giftBtn').href=waLink('Hola Francisco, quiero regalar el taller de fotografía de producto.');
 }
@@ -669,6 +743,7 @@ function route(){
   const el=document.getElementById(id);
   const view=(el && el.closest('.view')) || views[0];
   views.forEach(v=>{ const on=v===view; if(on && v.hidden){ v.classList.remove('enter'); void v.offsetWidth; v.classList.add('enter'); } v.hidden=!on; });
+  requestAnimationFrame(updateReels);
   navLinks.forEach(a=>{ if(a.getAttribute('href')==='#'+view.id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
   if(!el || el===view || el===view.querySelector('section')) window.scrollTo(0,0);
   else window.scrollTo(0, el.getBoundingClientRect().top+window.scrollY-document.querySelector('header.top').offsetHeight-12);
@@ -682,7 +757,8 @@ document.addEventListener('click',e=>{ const a=e.target.closest('a[href^="#"]');
   try{
     const data=await Promise.all(names.map(n=>fetch('content/'+n+'.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error(n); return r.json(); })));
     names.forEach((n,i)=>C[n]=data[i]);
-    renderContacto(); renderPortafolio(); renderCursos(); renderPrecios(); renderInfo();
+    C.detras=await fetch('content/detras.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
+    renderContacto(); renderPortafolio(); renderCursos(); renderPrecios(); renderInfo(); renderDetras();
     $('loading').hidden=true;
   }catch(err){
     $('loading').textContent='No se pudo cargar el contenido. Recarga la página en un momento.';
