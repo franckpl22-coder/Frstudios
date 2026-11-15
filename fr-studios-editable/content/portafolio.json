@@ -48,23 +48,27 @@
       "categoria": "Lifestyle"
     },
     {
-      "titulo": "Ambiente",
-      "categoria": "Lifestyle"
-    },
-    {
-      "titulo": "Ingredientes",
+      "foto": "/media/IMG_0520.jpg",
+      "titulo": "Fotografía menú",
       "categoria": "Gastronomía"
     },
     {
-      "titulo": "Perfil",
-      "categoria": "Catálogo"
+      "foto": "/media/IMG_9641.jpg",
+      "titulo": "Life",
+      "categoria": "Lifestyle"
     },
     {
-      "titulo": "Empaque",
-      "categoria": "Producto"
+      "foto": "/media/DSC_7934.jpg",
+      "titulo": "Detalles",
+      "categoria": "Gastronomía"
     },
     {
-      "titulo": "Mesa servida",
+      "foto": "/media/DSC_9871.jpg",
+      "titulo": "Life",
+      "categoria": "Lifestyle"
+    },
+    {
+      "foto": "/media/IMG_1877.jpg",
       "categoria": "Gastronomía"
     },
     {
