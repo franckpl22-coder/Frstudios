@@ -1,0 +1,44 @@
+{
+  "titulo": "Detrás de cámara",
+  "texto": "Así se construye una foto: del set armado al resultado final.",
+  "proyectos": [
+    {
+      "nombre": "Postre para menú",
+      "descripcion": "Ejemplo: fondo blanco, una sola luz y difusor.",
+      "proceso": [
+        {
+          "foto": "",
+          "nota": "Armado del set"
+        },
+        {
+          "foto": "",
+          "nota": "Prueba de luz"
+        },
+        {
+          "foto": "",
+          "nota": "Ajuste de composición"
+        }
+      ],
+      "final": ""
+    },
+    {
+      "nombre": "Sushi en el local",
+      "descripcion": "Ejemplo: luz natural de ventana y rebotador.",
+      "proceso": [
+        {
+          "foto": "",
+          "nota": "Montaje del platillo"
+        },
+        {
+          "foto": "",
+          "nota": "Luz de ventana"
+        },
+        {
+          "foto": "",
+          "nota": "Toma desde arriba"
+        }
+      ],
+      "final": ""
+    }
+  ]
+}
