@@ -85,6 +85,16 @@
       "foto": "/media/DSC_3152.jpg",
       "titulo": "LifeStyle",
       "categoria": "Gastronomía"
+    },
+    {
+      "foto": "/media/DSC00414.jpg",
+      "titulo": "Navaja ",
+      "categoria": "Producto"
+    },
+    {
+      "foto": "/media/DSC00967.jpg",
+      "titulo": "milit",
+      "categoria": "Producto"
     }
   ]
 }
