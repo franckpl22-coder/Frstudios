@@ -8,11 +8,6 @@
       "categoria": "Catálogo"
     },
     {
-      "foto": "/media/DSC02662.jpg",
-      "titulo": "Chokola",
-      "categoria": "Catálogo"
-    },
-    {
       "foto": "/media/DSC09596.jpg",
       "titulo": "Najera ",
       "categoria": "Lifestyle"
@@ -33,16 +28,19 @@
       "categoria": "Lifestyle"
     },
     {
-      "titulo": "Silueteado",
-      "categoria": "Producto"
-    },
-    {
-      "titulo": "Postre",
+      "foto": "/media/DSC09405.jpg",
+      "titulo": "Neveria el profe",
       "categoria": "Gastronomía"
     },
     {
-      "titulo": "Variantes",
-      "categoria": "Catálogo"
+      "foto": "/media/DSC09534.jpg",
+      "titulo": "Ejecutivo ",
+      "categoria": "Lifestyle"
+    },
+    {
+      "foto": "/media/IMG_3621.jpg",
+      "titulo": "Sushi Culichi",
+      "categoria": "Gastronomía"
     },
     {
       "titulo": "Reflejos",
