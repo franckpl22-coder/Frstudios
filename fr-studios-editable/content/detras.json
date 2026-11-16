@@ -3,42 +3,38 @@
   "texto": "Así se construye una foto: del set armado al resultado final.",
   "proyectos": [
     {
-      "nombre": "Postre para menú",
+      "nombre": "Sombrero blanco Gorras",
       "descripcion": "Ejemplo: fondo blanco, una sola luz y difusor.",
       "proceso": [
         {
-          "foto": "",
+          "foto": "/media/tempImage2Nxl6C.jpg",
           "nota": "Armado del set"
         },
         {
-          "foto": "",
-          "nota": "Prueba de luz"
+          "foto": "/media/DSC00734.jpg"
         },
         {
-          "foto": "",
-          "nota": "Ajuste de composición"
+          "foto": "/media/DSC00588.jpg"
+        },
+        {
+          "foto": "/media/DSC00592.jpg"
         }
-      ],
-      "final": ""
+      ]
     },
     {
       "nombre": "Sushi en el local",
       "descripcion": "Ejemplo: luz natural de ventana y rebotador.",
       "proceso": [
         {
-          "foto": "",
           "nota": "Montaje del platillo"
         },
         {
-          "foto": "",
           "nota": "Luz de ventana"
         },
         {
-          "foto": "",
           "nota": "Toma desde arriba"
         }
-      ],
-      "final": ""
+      ]
     }
   ]
 }
