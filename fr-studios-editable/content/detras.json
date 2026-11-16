@@ -18,11 +18,9 @@
         },
         {
           "foto": "/media/DSC00592.jpg"
-        },
-        {
-          "foto": "/media/DSC00568.jpg"
         }
-      ]
+      ],
+      "final": "/media/DSC00568-1.jpg"
     },
     {
       "nombre": "Sushi en el local",
