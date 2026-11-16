@@ -1,5 +1,4 @@
 {
-  "retrato": "",
   "nombre": "Francisco PL",
   "bio": "Soy fotógrafo de producto y fundador de FR Studios en Guamúchil. Trabajo con restaurantes, neverías y marcas locales que necesitan que lo que venden se vea tan bien en una pantalla como en persona.\n\nMi método es sencillo: una buena luz, un set limpio y el color real del producto. Es lo mismo que enseño en mi taller, uno a uno.",
   "proceso": [
@@ -24,14 +23,6 @@
       "texto": "Tus fotos en tamaño para web e impresión."
     }
   ],
-  "clientes": [
-    "Sushi Yokoi",
-    "Bar Kai",
-    "Keiba Sushi",
-    "Nevería El Profe",
-    "La Duquesa"
-  ],
-  "testimonios": [],
   "faq": [
     {
       "pregunta": "¿Vas a mi negocio o voy al estudio?",
