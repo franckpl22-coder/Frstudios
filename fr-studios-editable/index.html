@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FR Studios · Fotografía de producto</title>
-<meta name="description" content="FR Studios, estudio de fotografía de producto de Francisco PL en Guamúchil, Sinaloa. Fotografía de fondo blanco para e-commerce, gastronomía, lifestyle y catálogo. Taller personalizado de fotografía de producto.">
+<title>Pikhaus · Fotografía de producto</title>
+<meta name="description" content="Pikhaus, estudio de fotografía de producto de Francisco PL en Guamúchil, Sinaloa. Fotografía de fondo blanco para e-commerce, gastronomía, lifestyle y catálogo. Taller personalizado de fotografía de producto.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="FR Studios · Fotografía de producto en Guamúchil">
+<meta property="og:title" content="Pikhaus · Fotografía de producto y eventos en Guamúchil">
 <meta property="og:description" content="Fotografía de producto, gastronomía y lifestyle. Cotiza por WhatsApp o aparta tu lugar en el taller.">
 <meta name="theme-color" content="#FAFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@ header.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:8; backgro
 header.top.hide{transform:translateY(-110%)}
 header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:32px; padding-block:34px 30px}
 .logo{text-decoration:none; font-weight:500; font-size:1.12rem; letter-spacing:.3em; white-space:nowrap; color:var(--fg)}
-.menu ul{list-style:none; margin:0; padding:0; display:flex; gap:36px}
+.menu ul{list-style:none; margin:0; padding:0; display:flex; gap:32px}
 .menu a{text-decoration:none; color:var(--fg); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; padding-block:4px; border-bottom:1px solid transparent; white-space:nowrap}
 .menu a:hover{border-bottom-color:var(--line)}
 .menu a[aria-current="page"]{border-bottom-color:var(--fg)}
@@ -53,7 +53,7 @@ header.top .wrap{display:flex; align-items:center; justify-content:space-between
 .burger span:nth-child(1){top:16px} .burger span:nth-child(2){top:27px}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){transform:translateY(-5.5px) rotate(-45deg)}
-@media (max-width:1100px){
+@media (max-width:1240px){
   header.top .wrap{padding-block:22px 18px}
   .burger{display:block}
   .menu{position:fixed; inset:0; z-index:11; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:max(24px, env(safe-area-inset-top,0px)) 24px 24px; opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s}
@@ -61,11 +61,11 @@ header.top .wrap{display:flex; align-items:center; justify-content:space-between
   .menu ul{flex-direction:column; align-items:center; gap:26px}
   .menu a{font-size:1.05rem; letter-spacing:.22em}
 }
-@media (min-width:1101px){ header.top .wrap{padding-inline:max(56px, env(safe-area-inset-left,0px)) max(56px, env(safe-area-inset-right,0px))} }
+@media (min-width:1241px){ header.top .wrap{padding-inline:max(56px, env(safe-area-inset-left,0px)) max(56px, env(safe-area-inset-right,0px))} }
 
 /* Vistas */
 .view{padding-block:8px 120px}
-@media (min-width:901px){ #portafolio .wrap{padding-inline:56px} }
+@media (min-width:901px){ #portafolio .wrap, #sociales .wrap{padding-inline:56px} }
 @media (prefers-reduced-motion:no-preference){ .view.enter{animation:fade .35s ease both} }
 @keyframes fade{from{opacity:.001} to{opacity:1}}
 .block{padding-top:96px}
@@ -273,10 +273,11 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#portafolio">FR STUDIOS</a>
+    <a class="logo" href="#portafolio">PIKHAUS</a>
     <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav class="menu" id="menu" aria-label="Secciones"><ul>
       <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#sociales">Sociales</a></li>
       <li><a href="#detras">Detrás de cámara</a></li>
       <li><a href="#cursos">Cursos</a></li>
       <li><a href="#precios">Precios</a></li>
@@ -297,6 +298,17 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
       <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
     </div>
     <div class="grid" id="grid"></div>
+  </div>
+</div>
+
+<!-- SOCIALES -->
+<div class="view" id="sociales" hidden>
+  <div class="wrap">
+    <div class="intro">
+      <h1 style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)">Sociales: bodas, XV años y eventos</h1>
+      <div class="filters" id="sfilters" role="group" aria-label="Filtrar eventos"></div>
+    </div>
+    <div class="grid" id="sgrid"></div>
   </div>
 </div>
 
@@ -334,7 +346,7 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
           </div>
           <div id="tkWrap" hidden>
             <div class="paper" id="tkPaper"><pre class="receipt" id="tkTicket"></pre></div>
-            <button type="button" class="link" data-ticket="tkTicket" data-name="reserva-taller-fr-studios">Ver ticket como imagen JPG</button>
+            <button type="button" class="link" data-ticket="tkTicket" data-name="reserva-taller-pikhaus">Ver ticket como imagen JPG</button>
           </div>
           <div class="actions">
             <a class="btn solid" id="bookBtn" href="#" target="_blank" rel="noopener">Apartar fecha</a>
@@ -382,7 +394,7 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
           <div class="paper" id="qtPaper"><pre class="receipt" id="qtTicket"></pre></div>
           <div class="actions">
             <a class="btn solid" id="qtBtn" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-            <button type="button" class="link" data-ticket="qtTicket" data-name="cotizacion-fr-studios">Ver como imagen JPG</button>
+            <button type="button" class="link" data-ticket="qtTicket" data-name="cotizacion-pikhaus">Ver como imagen JPG</button>
           </div>
         </div>
       </div>
@@ -442,7 +454,7 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
 </div>
 </main>
 
-<footer><div class="wrap"><span id="ftCopy">© FR Studios</span><nav><a id="ftIg" href="#" target="_blank" rel="noopener">Instagram</a><a href="#contacto">Contacto</a><a href="#cursos">Taller</a></nav></div></footer>
+<footer><div class="wrap"><span id="ftCopy">© Pikhaus</span><nav><a id="ftIg" href="#" target="_blank" rel="noopener">Instagram</a><a href="#contacto">Contacto</a><a href="#cursos">Taller</a></nav></div></footer>
 
 <a class="wa" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg></a>
 
@@ -455,7 +467,7 @@ footer nav{display:flex; gap:20px; flex-wrap:wrap}
 <div class="im" id="im" hidden role="dialog" aria-modal="true" aria-label="Ticket como imagen">
   <div class="im-box">
     <div class="im-top"><span>Ticket · JPG</span><button type="button" class="link" id="imClose">Cerrar</button></div>
-    <img id="imImg" alt="Ticket de FR Studios">
+    <img id="imImg" alt="Ticket de Pikhaus">
     <p class="hint">Mantén presionada la imagen para guardarla y mándala por WhatsApp.</p>
     <div class="actions">
       <button type="button" class="btn solid" id="imShare" hidden>Compartir imagen</button>
@@ -499,12 +511,13 @@ function renderPortafolio(){
   photos=(P.fotos||[]).map((f,i)=>({...f, i, file:(f.foto?String(f.foto).split('/').pop():'FR_'+String(101+i).padStart(4,'0')+'.jpg'), bg:TONES[i%TONES.length], r:RATIOS[i%RATIOS.length]}));
   const present=[...new Set(photos.map(p=>p.categoria).filter(Boolean))].sort((a,b)=>(CAT_ORDER.indexOf(a)+99)%99-(CAT_ORDER.indexOf(b)+99)%99);
   const cats=['Todo',...present];
+  if(socPhotos.length) cats.push('Sociales');
   if(!cats.includes(filter)) filter='Todo';
   $('filters').innerHTML=cats.length>2?cats.map(c=>`<button type="button" aria-pressed="${c===filter}" data-c="${esc(c)}">${esc(c)}</button>`).join(''):'';
   renderGrid();
 }
 function renderGrid(){
-  shown=filter==='Todo'?photos:photos.filter(p=>p.categoria===filter);
+  shown=filter==='Todo'?photos.concat(socPhotos):filter==='Sociales'?socPhotos:photos.filter(p=>p.categoria===filter);
   $('grid').innerHTML=shown.length?shown.map((p,i)=>`<button type="button" class="ph" data-i="${i}" aria-label="Ver ${esc(p.titulo||p.file)} en grande">${p.foto?`<span class="img real"><img src="${esc(p.foto)}" alt="${esc(p.titulo)}" loading="lazy"></span>`:`<span class="img" style="aspect-ratio:${p.r}; background:${p.bg}"></span>`}<span class="cap"><span>${esc(p.titulo||p.file)}</span><i>${esc(p.categoria)}</i></span></button>`).join(''):'<p class="muted">Pronto nuevas fotos.</p>';
 }
 $('filters').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; filter=b.dataset.c; [...$('filters').children].forEach(x=>x.setAttribute('aria-pressed',x===b)); renderGrid(); });
@@ -529,6 +542,25 @@ $('lbStage').addEventListener('click',e=>{ if(e.target.id==='lbStage') lbClose()
 let sx=null;
 lb.addEventListener('pointerdown',e=>{ sx=e.clientX; });
 lb.addEventListener('pointerup',e=>{ if(sx===null) return; const dx=e.clientX-sx; sx=null; if(Math.abs(dx)>50) lbStep(dx<0?1:-1); });
+
+// ---------- Sociales ----------
+const SOC_ORDER=['Bodas','XV años','Bautizos','Cumpleaños','Eventos'];
+const SOC_EJEMPLO={fotos:[['Bodas','Primer baile'],['XV años','Vals'],['Bautizos','Ceremonia'],['Bodas','Anillos'],['Cumpleaños','Pastel'],['Eventos','Decoración'],['XV años','Retrato'],['Bodas','Salida de los novios'],['Bautizos','Familia'],['Eventos','Invitados'],['XV años','Brindis'],['Cumpleaños','Celebración']].map(([c,t])=>({foto:'',titulo:t,categoria:c}))};
+let socPhotos=[], socShown=[], socFilter='Todo';
+function renderSociales(){
+  const S=C.sociales||SOC_EJEMPLO;
+  socPhotos=(S.fotos||[]).map((f,i)=>({...f, file:(f.foto?String(f.foto).split('/').pop():'Evento '+(i+1)), bg:TONES[(i+2)%TONES.length], r:RATIOS[(i+4)%RATIOS.length]}));
+  const present=[...new Set(socPhotos.map(p=>p.categoria).filter(Boolean))].sort((a,b)=>(SOC_ORDER.indexOf(a)+99)%99-(SOC_ORDER.indexOf(b)+99)%99);
+  const cats=['Todo',...present]; if(!cats.includes(socFilter)) socFilter='Todo';
+  $('sfilters').innerHTML=cats.length>2?cats.map(c=>`<button type="button" aria-pressed="${c===socFilter}" data-c="${esc(c)}">${esc(c)}</button>`).join(''):'';
+  renderSocGrid();
+}
+function renderSocGrid(){
+  socShown=socFilter==='Todo'?socPhotos:socPhotos.filter(p=>p.categoria===socFilter);
+  $('sgrid').innerHTML=socShown.length?socShown.map((p,i)=>`<button type="button" class="ph" data-i="${i}" aria-label="Ver ${esc(p.titulo||p.file)} en grande">${p.foto?`<span class="img real"><img src="${esc(p.foto)}" alt="${esc(p.titulo)}" loading="lazy"></span>`:`<span class="img" style="aspect-ratio:${p.r}; background:${p.bg}"></span>`}</button>`).join(''):'<p class="muted">Pronto nuevas fotos.</p>';
+}
+$('sfilters').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; socFilter=b.dataset.c; [...$('sfilters').children].forEach(x=>x.setAttribute('aria-pressed',x===b)); renderSocGrid(); });
+$('sgrid').addEventListener('click',e=>{ const b=e.target.closest('.ph'); if(b) lbOpen(+b.dataset.i, socShown); });
 
 // ---------- Detrás de cámara ----------
 const DETRAS_EJEMPLO={titulo:'Detrás de cámara',texto:'Así se construye una foto: del set armado al resultado final.',proyectos:[{nombre:'Postre para menú',descripcion:'Ejemplo: fondo blanco, una sola luz y difusor.',proceso:[{nota:'Armado del set'},{nota:'Prueba de luz'},{nota:'Ajuste de composición'}],final:''}]};
@@ -557,8 +589,8 @@ $('dtList').addEventListener('click',e=>{ const b=e.target.closest('.slide'); if
 // ---------- Cursos ----------
 function tallerTicket(d){
   const K=C.cursos||{}, precio=+K.precio||0, iva=precio*(+K.iva||0)/100, total=precio+iva, ant=total*(+K.anticipo||0)/100;
-  const L=[center('FR STUDIOS'),center('Taller de fotografía'),center('de producto'),LINE,center('SOLICITUD DE RESERVA'),LINE,
-    row('Folio',folio('FR-T')),row('Solicitud',today()),LINE,
+  const L=[center('PIKHAUS'),center('Taller de fotografía'),center('de producto'),LINE,center('SOLICITUD DE RESERVA'),LINE,
+    row('Folio',folio('PK-T')),row('Solicitud',today()),LINE,
     row('Fecha taller', d?`${DAYS[d.getDay()]} ${p2(d.getDate())}/${p2(d.getMonth()+1)}/${d.getFullYear()}`:'Por definir'),
     row('Duración',K.duracion||''),row('Modalidad',K.modalidad||''),row('Equipo',K.equipo||''),LINE,
     row('Taller',fmt(precio))];
@@ -619,8 +651,8 @@ function quote(){
   setText('qtNo',q);
   const cobradas=Math.max(q,+s.minimo||0), base=(+s.precio_base||0)+Math.max(0,cobradas-(+s.incluye_hasta||0))*(+s.precio_extra||0);
   const trasl=local?(+R.traslado||0):0, total=base+trasl, city=(C.contacto||{}).ciudad||'';
-  const ticket=[center('FR STUDIOS'),center('Fotografía de producto'),center(city),LINE,center('COTIZACIÓN APROXIMADA'),LINE,
-    row('Folio',folio('FR-')),row('Fecha',today()),LINE,
+  const ticket=[center('PIKHAUS'),center('Fotografía de producto'),center(city),LINE,center('COTIZACIÓN APROXIMADA'),LINE,
+    row('Folio',folio('PK-')),row('Fecha',today()),LINE,
     row('Servicio',s.nombre||''),row('Cantidad',`${q} ${s.unidad||'piezas'}`),row('Uso',uso),row('Lugar',local?'Mi negocio':'Estudio'),LINE,
     row('Sesión',fmt(base)),row('Traslado',fmt(trasl)),LINE,
     row('TOTAL APROX.',fmt(total)+' MXN'),LINE,
@@ -657,9 +689,9 @@ function renderContacto(){
   const ig=String(K.instagram||'').replace(/^@/,'');
   $('c-ig').innerHTML=ig?`<a href="https://www.instagram.com/${esc(ig)}/" target="_blank" rel="noopener">@${esc(ig)}</a>`:'';
   $('ftIg').href=ig?`https://www.instagram.com/${ig}/`:'#'; $('ftIg').hidden=!ig;
-  setText('ftCopy',`© ${new Date().getFullYear()} FR Studios`);
+  setText('ftCopy',`© ${new Date().getFullYear()} Pikhaus`);
   const ld=document.createElement('script'); ld.type='application/ld+json';
-  ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ProfessionalService","name":"FR Studios","description":"Fotografía de producto, gastronomía y catálogo. Taller personalizado de fotografía de producto.","telephone":K.whatsapp_visible,"email":K.correo,"areaServed":K.ciudad,"address":{"@type":"PostalAddress","addressLocality":String(K.ciudad||'').split(',')[0],"addressRegion":"Sinaloa","addressCountry":"MX"},"sameAs":ig?[`https://www.instagram.com/${ig}/`]:[]});
+  ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ProfessionalService","name":"Pikhaus","description":"Fotografía de producto, gastronomía y catálogo. Taller personalizado de fotografía de producto.","telephone":K.whatsapp_visible,"email":K.correo,"areaServed":K.ciudad,"address":{"@type":"PostalAddress","addressLocality":String(K.ciudad||'').split(',')[0],"addressRegion":"Sinaloa","addressCountry":"MX"},"sameAs":ig?[`https://www.instagram.com/${ig}/`]:[]});
   document.head.appendChild(ld);
 }
 
@@ -682,7 +714,7 @@ async function ticketJpeg(text){
   x.closePath(); x.fillStyle='#FFFFFF'; x.fill(); x.restore();
   x.textBaseline='top';
   lines.forEach((l,i)=>{
-    const strong=/FR STUDIOS|TOTAL|ANTICIPO|COTIZACIÓN|RESERVA/.test(l);
+    const strong=/PIKHAUS|TOTAL|ANTICIPO|COTIZACIÓN|RESERVA/.test(l);
     x.font=`${strong?500:400} ${fs}px "IBM Plex Mono", Menlo, monospace`;
     x.fillStyle=strong?'#111113':'#2A2A2C';
     x.fillText(l, left+pad, top+pad+i*lh);
@@ -705,7 +737,7 @@ function imClose(){ im.hidden=true; document.body.style.overflow=''; if(imLast) 
 $('imClose').onclick=imClose;
 im.addEventListener('click',e=>{ if(e.target===im) imClose(); });
 imShare.onclick=async()=>{
-  try{ await navigator.share({files:[imFile], title:'Ticket FR Studios'}); imMsg.textContent='Elige WhatsApp y el chat de Francisco.'; }
+  try{ await navigator.share({files:[imFile], title:'Ticket Pikhaus'}); imMsg.textContent='Elige WhatsApp y el chat de Francisco.'; }
   catch(e){ imMsg.textContent='No se abrió el menú de compartir. Mantén presionada la imagen para guardarla.'; }
 };
 $('imCopy').onclick=()=>{
@@ -758,7 +790,8 @@ document.addEventListener('click',e=>{ const a=e.target.closest('a[href^="#"]');
     const data=await Promise.all(names.map(n=>fetch('content/'+n+'.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error(n); return r.json(); })));
     names.forEach((n,i)=>C[n]=data[i]);
     C.detras=await fetch('content/detras.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
-    renderContacto(); renderPortafolio(); renderCursos(); renderPrecios(); renderInfo(); renderDetras();
+    C.sociales=await fetch('content/sociales.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
+    renderContacto(); renderSociales(); renderPortafolio(); renderCursos(); renderPrecios(); renderInfo(); renderDetras();
     $('loading').hidden=true;
   }catch(err){
     $('loading').textContent='No se pudo cargar el contenido. Recarga la página en un momento.';
