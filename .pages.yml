@@ -36,6 +36,33 @@ content:
             options:
               values: [Producto, Gastronomía, Lifestyle, Catálogo]
 
+  - name: sociales
+    label: Sociales
+    type: file
+    path: fr-studios-editable/content/sociales.json
+    format: json
+    fields:
+      - name: fotos
+        label: Fotos de eventos
+        description: Arrastra para cambiar el orden. Las fotos sin imagen se ven como marcos grises.
+        type: object
+        list:
+          collapsible: true
+          collapsed: true
+          summary: "{titulo} · {categoria}"
+        fields:
+          - name: foto
+            label: Foto
+            type: image
+          - name: titulo
+            label: Título
+            type: string
+          - name: categoria
+            label: Tipo de evento
+            type: select
+            options:
+              values: [Bodas, XV años, Bautizos, Cumpleaños, Eventos]
+
   - name: detras
     label: Detrás de cámara
     type: file
