@@ -1,62 +1,52 @@
 {
   "fotos": [
     {
-      "foto": "",
-      "titulo": "Primer baile",
-      "categoria": "Bodas"
+      "foto": "/media/IMG_2801-2.jpg",
+      "titulo": "Rostros",
+      "categoria": "Eventos"
     },
     {
-      "foto": "",
-      "titulo": "Vals",
-      "categoria": "XV años"
+      "foto": "/media/IMG_9295-2.jpg",
+      "titulo": "Rostros",
+      "categoria": "Eventos"
     },
     {
-      "foto": "",
       "titulo": "Ceremonia",
       "categoria": "Bautizos"
     },
     {
-      "foto": "",
       "titulo": "Anillos",
       "categoria": "Bodas"
     },
     {
-      "foto": "",
       "titulo": "Pastel",
       "categoria": "Cumpleaños"
     },
     {
-      "foto": "",
       "titulo": "Decoración",
       "categoria": "Eventos"
     },
     {
-      "foto": "",
       "titulo": "Retrato",
       "categoria": "XV años"
     },
     {
-      "foto": "",
       "titulo": "Salida de los novios",
       "categoria": "Bodas"
     },
     {
-      "foto": "",
       "titulo": "Familia",
       "categoria": "Bautizos"
     },
     {
-      "foto": "",
       "titulo": "Invitados",
       "categoria": "Eventos"
     },
     {
-      "foto": "",
       "titulo": "Brindis",
       "categoria": "XV años"
     },
     {
-      "foto": "",
       "titulo": "Celebración",
       "categoria": "Cumpleaños"
     }
